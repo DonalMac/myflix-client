@@ -1,6 +1,8 @@
 import react, { useState } from "react";
 
 import './login-view.scss';
+
+
 export function RegistrationView(props) {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');

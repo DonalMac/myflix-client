@@ -25,8 +25,8 @@ class MainView extends React.Component {
           movies: response.data
         });
       })
-      .catch(erorr => {
-        console.log(erorr);
+      .catch(error => {
+        console.log(error);
       });
   }
 
