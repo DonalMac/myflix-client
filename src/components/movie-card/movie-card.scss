@@ -1,0 +1,36 @@
+$mainColor: linear-gradient(89deg, #0061f2 80%, rgb(0 255 161 / 99%) 100%);
+
+$backgroundColor: linear-gradient(89deg, #0061f2 0%, rgb(0 255 161 / 99%) 100%);
+
+#card {
+  padding-left: 1px;
+  padding-right: 5px;
+  margin-left: 5px;
+}
+
+#movie-card {
+  margin-top: 5px;
+  text-align: center;
+  background: #e3e7ec;
+  border-radius: 10px;
+  box-shadow: 5px 20px 30px #000;
+  cursor: pointer;
+}
+
+#card-title {
+  justify-content: center;
+  padding: 0px;
+  height: 70px;
+
+}
+
+.card-text {
+  height: 210px;
+}
+
+#card-button {
+  width: 99%;
+  background: $mainColor;
+  color: #000;
+  font-size: 20px;
+}

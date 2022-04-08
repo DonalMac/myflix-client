@@ -1,0 +1,9 @@
+$mainColor: linear-gradient(89deg, #0061f2 50%, rgb(0 255 161 / 99%) 100%);
+
+$backgroundColor: linear-gradient(89deg, #0061f2 0%, rgb(0 255 161 / 99%) 100%);
+
+.mainContainer {
+  margin-top: 50px;
+  background: $backgroundColor;
+
+}

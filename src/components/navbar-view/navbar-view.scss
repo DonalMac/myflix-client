@@ -1,0 +1,39 @@
+$mainColor: linear-gradient(89deg, #0061f2 50%, rgb(0 255 161 / 99%) 100%);
+
+$backgroundColor: linear-gradient(89deg, #0061f2 0%, rgb(0 255 161 / 99%) 100%);
+
+
+:root {
+  --fontsize-navbar-brand: 30px;
+  --fontsize-navbar-link: 20px;
+  --fontweight-navbar-brand: 900;
+  --fontweight-navbar-link: 600;
+}
+
+* {
+  box-sizing: border-box;
+
+}
+
+#navbar {
+  background: $mainColor;
+}
+
+#navbar-container {
+  margin: 0;
+}
+
+#navbar-brand {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+
+
+#nav-link {
+
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+  padding-top: 15px;
+}
