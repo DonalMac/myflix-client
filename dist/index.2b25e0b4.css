@@ -1,0 +1,123 @@
+.mainContainer {
+  background: linear-gradient(89deg, #0061f2 0%, #00ffa1fc 100%);
+  margin-top: 50px;
+}
+
+
+
+#card {
+  margin-left: 5px;
+  padding-left: 1px;
+  padding-right: 5px;
+}
+
+#movie-card {
+  text-align: center;
+  cursor: pointer;
+  background: #e3e7ec;
+  border-radius: 10px;
+  margin-top: 5px;
+  box-shadow: 5px 20px 30px #000;
+}
+
+#card-title {
+  height: 70px;
+  justify-content: center;
+  padding: 0;
+}
+
+.card-text {
+  height: 210px;
+}
+
+#card-button {
+  width: 99%;
+  color: #000;
+  background: linear-gradient(89deg, #0061f2 80%, #00ffa1fc 100%);
+  font-size: 20px;
+}
+
+.container {
+  margin-top: 40px;
+}
+
+.movie-view {
+  width: 550px;
+  height: 800px;
+  color: #fff;
+  background: linear-gradient(#0f0c29, #302b63, #24243e);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 5px 20px 50px #000;
+}
+
+.movie-title {
+  text-align: center;
+  justify-content: center;
+  margin: 20px;
+  padding: 20px;
+  font-size: 2.3em;
+  font-weight: bold;
+  display: flex;
+}
+
+.movie-image {
+  text-align: center;
+  height: 300px;
+  justify-content: center;
+  margin-left: 30%;
+  display: flex;
+  box-shadow: 5px 20px 50px #000;
+}
+
+.movie-description {
+  justify-content: center;
+  padding: 30px 30px 20px;
+  font-size: 1em;
+  line-height: 1.5;
+  display: flex;
+}
+
+.movie-genre {
+  padding-top: 0;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  font-weight: bold;
+}
+
+:root {
+  --fontsize-navbar-brand: 30px;
+  --fontsize-navbar-link: 20px;
+  --fontweight-navbar-brand: 900;
+  --fontweight-navbar-link: 600;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#navbar {
+  background: linear-gradient(89deg, #0061f2 50%, #00ffa1fc 100%);
+}
+
+#navbar-container {
+  margin: 0;
+}
+
+#navbar-brand {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+#nav-link {
+  color: #000;
+  padding-top: 15px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.my-flix {
+  color: #4682b4;
+}
+
+/*# sourceMappingURL=index.2b25e0b4.css.map */
