@@ -1,4 +1,5 @@
 import react, { useState } from "react";
+import PropTypes from 'prop-types';
 
 
 import './registration-view.scss';
@@ -30,3 +31,10 @@ export function RegistrationView(props) {
     </form>
   );
 }
+RegistrationView.propTypes = {
+  register: PropTypes.shape({
+    Username: PropTypes.string.isRequired,
+    Password: PropTypes.string.isRequired,
+  }),
+  onLoggedIn: PropTypes.func.isRequired
+};
