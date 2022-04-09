@@ -1,6 +1,7 @@
 import react, { useState } from "react";
 
-import './login-view.scss';
+
+import './registration-view.scss';
 
 
 export function RegistrationView(props) {
@@ -25,7 +26,7 @@ export function RegistrationView(props) {
         Password:
         <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
       </label>
-      <button type="submit" onClick={handleSubmit}>Submit</button>
+      <button type="submit" onClick={handleSubmit}>Register</button>
     </form>
   );
 }
