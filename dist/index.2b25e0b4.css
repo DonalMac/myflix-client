@@ -3,7 +3,47 @@
   margin-top: 50px;
 }
 
+#loginContainer {
+  height: 500px;
+  background: linear-gradient(89deg, #0061f2 0%, #00ffa1fc 100%);
+  border-radius: 5px;
+  margin-top: 50px;
+}
 
+.col {
+  padding-top: 50px;
+}
+
+:root {
+  --fontsize-navbar-brand: 30px;
+  --fontsize-navbar-link: 20px;
+  --fontweight-navbar-brand: 900;
+  --fontweight-navbar-link: 600;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#navbar {
+  background: linear-gradient(89deg, #0061f2 50%, #00ffa1fc 100%);
+}
+
+#navbar-container {
+  margin: 0;
+}
+
+#navbar-brand {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+#nav-link {
+  color: #000;
+  padding-top: 15px;
+  font-size: 20px;
+  font-weight: 600;
+}
 
 #card {
   margin-left: 5px;
@@ -41,7 +81,7 @@
   margin-top: 40px;
 }
 
-.movie-view {
+#movie-view {
   width: 550px;
   height: 800px;
   color: #fff;
@@ -51,7 +91,7 @@
   box-shadow: 5px 20px 50px #000;
 }
 
-.movie-title {
+#movie-title {
   text-align: center;
   justify-content: center;
   margin: 20px;
@@ -61,7 +101,7 @@
   display: flex;
 }
 
-.movie-image {
+#movie-image {
   text-align: center;
   height: 300px;
   justify-content: center;
@@ -70,7 +110,7 @@
   box-shadow: 5px 20px 50px #000;
 }
 
-.movie-description {
+#movie-description {
   justify-content: center;
   padding: 30px 30px 20px;
   font-size: 1em;
@@ -78,42 +118,11 @@
   display: flex;
 }
 
-.movie-genre {
+#movie-genre {
   padding-top: 0;
   padding-bottom: 30px;
   padding-left: 30px;
   font-weight: bold;
-}
-
-:root {
-  --fontsize-navbar-brand: 30px;
-  --fontsize-navbar-link: 20px;
-  --fontweight-navbar-brand: 900;
-  --fontweight-navbar-link: 600;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-#navbar {
-  background: linear-gradient(89deg, #0061f2 50%, #00ffa1fc 100%);
-}
-
-#navbar-container {
-  margin: 0;
-}
-
-#navbar-brand {
-  font-size: 30px;
-  font-weight: 600;
-}
-
-#nav-link {
-  color: #000;
-  padding-top: 15px;
-  font-size: 20px;
-  font-weight: 600;
 }
 
 .my-flix {

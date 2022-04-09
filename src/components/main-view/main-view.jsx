@@ -95,40 +95,40 @@ class MainView extends React.Component {
 
     //if (!register) return <RegistrationView onRegistration={(register) => this.onRegistration(register)} />;
 
-    if (user === 'true' && movies.length === 0)
-      return (
-        <Container className="mainContainer">
-          <Row>
-            <NavbarView user={user} />
+    if (user === 'true' && movies.length === 0) return <div className="main-view" />;
+    return (
+      <Container className="mainContainer">
+        <Row>
+          <NavbarView user={user} />
 
-          </Row>
-          <Row className="main-view justify-content-md-center">
-            {selectedMovie
-              ? (
+        </Row>
+        <Row className="main-view justify-content-md-center">
+          {selectedMovie
+            ? (
+              <Col md={6} lg={3}>
+                <MovieView movie={selectedMovie}
+                  onBackClick={newSelectedMovie => {
+                    this.setSelectedMovie(newSelectedMovie);
+                  }}
+                />
+              </Col>
+            )
+            : (
+              movies.map(movie => (
                 <Col md={6} lg={3}>
-                  <MovieView movie={selectedMovie}
-                    onBackClick={newSelectedMovie => {
+                  <MovieCard key={movie._id}
+                    movie={movie}
+                    onMovieClick={newSelectedMovie => {
                       this.setSelectedMovie(newSelectedMovie);
                     }}
                   />
                 </Col>
-              )
-              : (
-                movies.map(movie => (
-                  <Col md={6} lg={3}>
-                    <MovieCard key={movie._id}
-                      movie={movie}
-                      onMovieClick={newSelectedMovie => {
-                        this.setSelectedMovie(newSelectedMovie);
-                      }}
-                    />
-                  </Col>
-                ))
-              )
-            }
-          </Row>
-        </Container>
-      );
+              ))
+            )
+          }
+        </Row>
+      </Container>
+    );
   }
 }
 

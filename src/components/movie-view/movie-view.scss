@@ -2,7 +2,7 @@
   margin-top: 40px;
 }
 
-.movie-view {
+#movie-view {
   width: 550px;
   height: 800px;
   overflow: hidden;
@@ -12,7 +12,7 @@
   color: white;
 }
 
-.movie-title {
+#movie-title {
   font-size: 2.3em;
   justify-content: center;
   display: flex;
@@ -22,7 +22,7 @@
   text-align: center;
 }
 
-.movie-image {
+#movie-image {
   justify-content: center;
   display: flex;
   margin-left: 30%;
@@ -32,7 +32,7 @@
   box-shadow: 5px 20px 50px #000;
 }
 
-.movie-description {
+#movie-description {
   padding-left: 30px;
   padding-right: 30px;
   padding-bottom: 20px;
@@ -44,7 +44,7 @@
 
 }
 
-.movie-genre {
+#movie-genre {
   font-weight: bold;
   padding-top: 0px;
   padding-left: 30px;
