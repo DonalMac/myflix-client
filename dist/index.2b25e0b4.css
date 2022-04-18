@@ -1,18 +1,18 @@
-.mainContainer {
-  background: linear-gradient(89deg, #0061f2 0%, #00ffa1fc 100%);
+.container {
   margin-top: 50px;
-}
-
-#loginContainer {
-  height: 500px;
-  background: linear-gradient(89deg, #0061f2 0%, #00ffa1fc 100%);
-  border-radius: 5px;
-  margin-top: 50px;
+  margin-bottom: 25px;
 }
 
 .col {
-  padding-top: 50px;
+  padding-top: 0;
 }
+
+.mainContainer {
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
+
 
 :root {
   --fontsize-navbar-brand: 30px;
@@ -26,7 +26,7 @@
 }
 
 #navbar {
-  background: linear-gradient(89deg, #0061f2 50%, #00ffa1fc 100%);
+  background: linear-gradient(89deg, #343a40 65%, #00fffd 100%);
 }
 
 #navbar-container {
@@ -34,15 +34,46 @@
 }
 
 #navbar-brand {
-  font-size: 30px;
+  color: #d3d3d3;
+  font-size: 50px;
   font-weight: 600;
 }
 
+span {
+  color: #00fffd;
+}
+
 #nav-link {
-  color: #000;
+  color: #00fffd;
   padding-top: 15px;
   font-size: 20px;
   font-weight: 600;
+}
+
+.label {
+  padding: 60px;
+}
+
+#cardBody {
+  margin-top: 75px;
+  padding: 50px;
+}
+
+.LogRegButton {
+  height: 50px;
+  background-color: #000;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.LogRegPageButton {
+  height: 50px;
+  background-color: #000;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 50px;
 }
 
 #card {
@@ -66,35 +97,26 @@
   padding: 0;
 }
 
-.card-text {
-  height: 210px;
+#card-text {
+  height: 155px;
 }
 
 #card-button {
   width: 99%;
-  color: #000;
-  background: linear-gradient(89deg, #0061f2 80%, #00ffa1fc 100%);
   font-size: 20px;
 }
 
-.container {
-  margin-top: 40px;
-}
-
 #movie-view {
-  width: 550px;
-  height: 800px;
-  color: #fff;
-  background: linear-gradient(#0f0c29, #302b63, #24243e);
   border-radius: 10px;
-  overflow: hidden;
   box-shadow: 5px 20px 50px #000;
 }
 
-#movie-title {
+.movie-title {
+  color: #00fffd;
   text-align: center;
+  background-color: #000;
   justify-content: center;
-  margin: 20px;
+  margin-top: 5px;
   padding: 20px;
   font-size: 2.3em;
   font-weight: bold;
@@ -110,23 +132,51 @@
   box-shadow: 5px 20px 50px #000;
 }
 
-#movie-description {
+.movie-description {
+  border-bottom: 1px solid #000;
   justify-content: center;
-  padding: 30px 30px 20px;
+  padding-bottom: 15px;
+  padding-left: 15px;
   font-size: 1em;
   line-height: 1.5;
   display: flex;
 }
 
 #movie-genre {
-  padding-top: 0;
-  padding-bottom: 30px;
-  padding-left: 30px;
-  font-weight: bold;
+  color: #000;
+  border-bottom: 1px solid #000;
+  padding: 20px;
+  font-size: 1em;
 }
 
-.my-flix {
-  color: #4682b4;
+#movie-director {
+  color: #00fffd;
+  background-color: #000;
+  padding: 20px;
+  font-size: 1em;
+}
+
+#FavButton {
+  float: right;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  min-width: 100%;
+  background: linear-gradient(89deg, #343a40 0%, #00fffd 100%);
+  flex-direction: column;
+  display: flex;
+}
+
+.footer {
+  height: 10px;
+  background: linear-gradient(89deg, #00fffd 0%, #343a40);
+  margin-top: auto;
+  padding: 3em;
 }
 
 /*# sourceMappingURL=index.2b25e0b4.css.map */

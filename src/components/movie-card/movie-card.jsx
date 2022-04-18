@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { CardGroup, Container, Button, Card } from "react-bootstrap";
+import { CardGroup, CardImg, Container, Button, Card } from "react-bootstrap";
+
+
 
 import './movie-card.scss';
 
@@ -9,18 +11,18 @@ export class MovieCard extends React.Component {
     const { movie, onMovieClick } = this.props;
 
     return (
-      <Container id="card">
-        <CardGroup id="card">
+      <Container >
+        < CardGroup id="card" >
           <Card id="movie-card">
-            <Card.Img variant="top" src={movie.ImagePath} />
+            <Card.Img variant="top" src="https://via.placeholder.com/75.png" />
             <Card.Body>
               <Card.Title id="card-title">{movie.Title}</Card.Title>
-              <Card.Text>{movie.Description}</Card.Text>
-              <Button id="card-button" onClick={() => onMovieClick(movie)} variant="link">Open</Button>
+              <Card.Text id="card-text">{movie.Description}</Card.Text>
+              <Button variant="primary" id="card-button" onClick={() => onMovieClick(movie)}>Open</Button>
             </Card.Body>
           </Card>
-        </CardGroup>
-      </Container>
+        </CardGroup >
+      </Container >
     );
   }
 }

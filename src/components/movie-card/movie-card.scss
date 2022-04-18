@@ -24,13 +24,11 @@ $backgroundColor: linear-gradient(89deg, #0061f2 0%, rgb(0 255 161 / 99%) 100%);
 
 }
 
-.card-text {
-  height: 210px;
+#card-text {
+  height: 155px;
 }
 
 #card-button {
   width: 99%;
-  background: $mainColor;
-  color: #000;
   font-size: 20px;
 }

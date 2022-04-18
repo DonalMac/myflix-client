@@ -2,10 +2,10 @@ import React from "react";
 
 import { Navbar, Container, Nav, Button, Offcanvas, NavDropdown, Form, FormControl } from 'react-bootstrap';
 
-import './navbar-view.scss';
+//import './navbar-view.scss';
 
 
-export function NavbarView({ user }) {
+export function FooterView({ user }) {
 
   const onLoggedOut = () => {
     localStorage.clear();
@@ -13,7 +13,7 @@ export function NavbarView({ user }) {
   };
 
   return (
-    <Navbar id="navbar" fixed="top" position="sticky">
+    <Navbar id="navbar" fixed="bottom">
       <Container id="navbar-container">
         <Navbar.Brand id="navbar-brand" href="#">my<span>Flix</span></Navbar.Brand>
         <Nav id="nav" className="me-auto">

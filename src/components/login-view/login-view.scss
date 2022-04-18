@@ -1,14 +1,33 @@
 $mainColor: linear-gradient(89deg, #0061f2 50%, rgb(0 255 161 / 99%) 100%);
-
 $backgroundColor: linear-gradient(89deg, #0061f2 0%, rgb(0 255 161 / 99%) 100%);
 
-#loginContainer {
-  margin-top: 50px;
-  background: $backgroundColor;
-  height: 500px;
-  border-radius: 5px;
+
+
+
+
+.label {
+  padding: 60px;
 }
 
-.col {
-  padding-top: 50px;
+#cardBody {
+  margin-top: 75px;
+  padding: 50px;
+}
+
+.LogRegButton {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: black;
+  height: 50px;
+  border: white;
+
+}
+
+.LogRegPageButton {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: black;
+  height: 50px;
+  border: white;
+  margin-left: 50px;
 }

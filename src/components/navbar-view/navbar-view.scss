@@ -1,6 +1,6 @@
-$mainColor: linear-gradient(89deg, #0061f2 50%, rgb(0 255 161 / 99%) 100%);
+$mainColor: linear-gradient(89deg, #343a40 65%, #00fffd 100%);
 
-$backgroundColor: linear-gradient(89deg, #0061f2 0%, rgb(0 255 161 / 99%) 100%);
+$backgroundColor: linear-gradient(89deg, #343a40 0%, #00fffd 100%);
 
 
 :root {
@@ -24,8 +24,13 @@ $backgroundColor: linear-gradient(89deg, #0061f2 0%, rgb(0 255 161 / 99%) 100%);
 }
 
 #navbar-brand {
-  font-size: 30px;
+  font-size: 50px;
   font-weight: 600;
+  color: #d3d3d3;
+}
+
+span {
+  color: #00fffd;
 }
 
 
@@ -34,6 +39,6 @@ $backgroundColor: linear-gradient(89deg, #0061f2 0%, rgb(0 255 161 / 99%) 100%);
 
   font-size: 20px;
   font-weight: 600;
-  color: black;
+  color: #00fffd;
   padding-top: 15px;
 }

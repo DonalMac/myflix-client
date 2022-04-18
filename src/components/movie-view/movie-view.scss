@@ -1,22 +1,16 @@
-.container {
-  margin-top: 40px;
-}
-
 #movie-view {
-  width: 550px;
-  height: 800px;
-  overflow: hidden;
-  background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
   border-radius: 10px;
   box-shadow: 5px 20px 50px #000;
-  color: white;
+
 }
 
-#movie-title {
+.movie-title {
+  background-color: black;
+  color: #00fffd;
+  margin-top: 5px;
   font-size: 2.3em;
   justify-content: center;
   display: flex;
-  margin: 20px;
   font-weight: bold;
   padding: 20px;
   text-align: center;
@@ -32,23 +26,34 @@
   box-shadow: 5px 20px 50px #000;
 }
 
-#movie-description {
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-bottom: 20px;
-  padding-top: 30px;
+.movie-description {
+  padding-left: 15px;
+  padding-bottom: 15px;
   font-size: 1em;
   line-height: 1.5;
   justify-content: center;
   display: flex;
-
+  border-bottom: 1px solid black;
 }
 
 #movie-genre {
-  font-weight: bold;
-  padding-top: 0px;
-  padding-left: 30px;
-  padding-bottom: 30px;
+  //background-color: #00fffd;
+  color: black;
+  font-size: 1em;
+  padding: 20px;
+  border-bottom: 1px solid black;
+
+}
+
+#movie-director {
+  background-color: black;
+  color: #00fffd;
+  font-size: 1em;
+  padding: 20px;
 
 
+}
+
+#FavButton {
+  float: right;
 }
