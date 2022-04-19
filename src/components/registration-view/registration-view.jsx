@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Form, Button, Card, CardGroup, Container, Col, Row } from 'react-bootstrap';
-
+import axios from 'axios';
 import './registration-view.scss';
 
 import { NavbarView } from "../navbar-view/navbar-view";
@@ -13,12 +13,60 @@ export function RegistrationView(props) {
   const [email, setEmail] = useState('');
   const [birthday, setBirthday] = useState('');
 
+  // Declare hook for each input
+  const [nameErr, setNameErr] = useState('');
+  const [passwordErr, setPasswordErr] = useState('');
+  const [emailErr, setEmailErr] = useState('');
+
+  // validate user inputs
+  const validate = () => {
+    let isReq = true;
+    if (!name) {
+      setNameErr('A Username or Name Required');
+      isReq = false;
+    } else if (name.length < 2) {
+      setNameErr('Username must be at least 2 characters long');
+      isReq = false;
+    }
+    if (!password) {
+      setPasswordErr('A Password is Required');
+      isReq = false;
+    } else if (password.length < 6) {
+      setPasswordErr('Password must be at least 6 characters long');
+      isReq = false;
+    }
+    if (!email) {
+      setEmailErr('Please enter an email address');
+      isReq = false;
+    } else if (email.indexOf('@') === -1) {
+      setEmailErr('Please enter a valid email address');
+    }
+    return isReq;
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(name, password);
-    /* Send a request to the server for authentication */
-    /* then call props.onLoggedIn(name) */
-    props.onLoggedIn(name);
+    const isReq = validate();
+    if (isReq) {
+      /* Send request to the server for authentication */
+      axios.post('https://mac-myflix.herokuapp.com/users', {
+        Name: name,
+        Password: password,
+        Email: email,
+        Birthday: birthday,
+      })
+        .then(response => {
+          const data = response.data;
+          console.log(data);
+
+          alert('Registration successful, please login!');
+          window.open('/', '_self');
+        })
+        .catch(response => {
+          console.error(response);
+          alert('Unable to register');
+        });
+    }
   };
 
   return (
@@ -28,7 +76,7 @@ export function RegistrationView(props) {
         <CardGroup>
           <Card>
             <Card.Body>
-              <Card.Title>Please Register</Card.Title>
+              <Card.Title id="cardTitle">Please Register for a myFlix account</Card.Title>
               <Form>
                 <Form.Group>
                   <Form.Label>Name:</Form.Label>
@@ -38,6 +86,7 @@ export function RegistrationView(props) {
                     onChange={e => setName(e.target.value)}
                     required
                     placeholder="Enter your Name" />
+                  {nameErr && <p>{nameErr}</p>}
                 </Form.Group>
 
                 <Form.Group>
@@ -49,6 +98,7 @@ export function RegistrationView(props) {
                     required
                     placeholder="Enter a Password"
                     minLength="8" />
+                  {passwordErr && <p>{passwordErr}</p>}
                 </Form.Group>
                 <Form.Group>
                   <Form.Label>Email:</Form.Label>
@@ -57,16 +107,17 @@ export function RegistrationView(props) {
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                     required
-                    placeholder="Enter your email adress" />
+                    placeholder="Enter your email address" />
+                  {emailErr && <p>{emailErr}</p>}
                 </Form.Group>
                 <Form.Group>
                   <Form.Label>Birthday:</Form.Label>
                   <Form.Control
-                    type="birthday"
+                    type="date"
                     value={birthday}
                     onChange={e => setBirthday(e.target.value)}
                     required
-                    placeholder="Enter your birthdate MM/DD/YYYY" />
+                    placeholder="Enter your birthdate YYYY-MM-DD" />
                 </Form.Group>
 
 
@@ -89,10 +140,9 @@ export function RegistrationView(props) {
 
 RegistrationView.propTypes = {
   register: PropTypes.shape({
-    Username: PropTypes.string.isRequired,
+    Name: PropTypes.string.isRequired,
     Password: PropTypes.string.isRequired,
     Email: PropTypes.string.isRequired,
-    Birthday: PropTypes.string.isRequired
+    Birthday: PropTypes.instanceOf(Date).isRequired,
   }),
-  onLoggedIn: PropTypes.func.isRequired
 };

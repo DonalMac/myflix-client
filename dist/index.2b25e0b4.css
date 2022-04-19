@@ -60,7 +60,13 @@ span {
 }
 
 #cardBody {
-  margin-top: 75px;
+  margin-top: 35px;
+  padding: 50px;
+}
+
+#cardTitle {
+  color: #00fffd;
+  background: linear-gradient(89deg, #343a40 85%, #00fffd 100%);
   padding: 50px;
 }
 
