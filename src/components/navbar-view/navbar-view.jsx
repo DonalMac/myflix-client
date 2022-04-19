@@ -17,7 +17,7 @@ export function NavbarView({ user }) {
       <Container id="navbar-container">
         <Navbar.Brand id="navbar-brand" href="#">my<span>Flix</span></Navbar.Brand>
         <Nav id="nav" className="me-auto">
-          <Nav.Link id="nav-link" href="#home">Account</Nav.Link>
+          <Nav.Link id="nav-link" href="#home">{user}</Nav.Link>
           <Nav.Link id="nav-link" href="#features">Watchlist</Nav.Link>
           <Nav.Link id="nav-link" href="#pricing">Register</Nav.Link>
         </Nav>

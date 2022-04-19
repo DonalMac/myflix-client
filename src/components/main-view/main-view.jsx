@@ -9,7 +9,6 @@ import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { NavbarView } from "../navbar-view/navbar-view";
-import { FooterView } from "../footer-view/footer-view";
 
 
 class MainView extends React.Component {
@@ -19,10 +18,10 @@ class MainView extends React.Component {
     this.state = {
       movies: [],
       selectedMovie: null,
-      user: null,
-      visible: true,
+      //user: null,
       whichComponentToShow: "LoginView"
     };
+
   }
 
   componentDidMount() {
@@ -45,10 +44,15 @@ class MainView extends React.Component {
     });
   }
 
-  onLoggedIn(user) {
+  onLoggedIn(authData) {
+    console.log(authData);
     this.setState({
-      user
+      user: authData.user.Name
     });
+
+    localStorage.setItem('token', authData.token);
+    localStorage.setItem('user', authData.user.Name);
+    this.getMovies(authData.token);
   }
 
   /* onRegistration(register) {
