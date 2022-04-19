@@ -25,15 +25,13 @@ class MainView extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('https://mac-myflix.herokuapp.com/movies')
-      .then(response => {
-        this.setState({
-          movies: response.data
-        });
-      })
-      .catch(error => {
-        console.log(error);
+    let accessToken = localStorage.getItem('token');
+    if (accessToken !== null) {
+      this.setState({
+        user: localStorage.getItem('user')
       });
+      this.getMovies(accessToken);
+    }
   }
 
   // componentWillUnmount(){}
@@ -42,6 +40,21 @@ class MainView extends React.Component {
     this.setState({
       selectedMovie: movie
     });
+  }
+
+  getMovies(token) {
+    axios.get('https://mac-myflix.herokuapp.com/movies', {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+      .then(response => {
+        // Assign the result to the state
+        this.setState({
+          movies: response.data
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   onLoggedIn(authData) {
@@ -55,11 +68,13 @@ class MainView extends React.Component {
     this.getMovies(authData.token);
   }
 
-  /* onRegistration(register) {
-     this.setState({
-         register
-     });
- }*/
+  onLoggedOut() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this.setState({
+      user: null
+    });
+  }
 
   render() {
     const { movies, selectedMovie, user, register } = this.state;
@@ -110,6 +125,9 @@ class MainView extends React.Component {
           <NavbarView user={user} />
 
         </Row>
+        <Button variant="primary" className="logOutButton" type="submit" onClick={() => { this.onLoggedOut() }}>
+          Logout?
+        </Button>
         <Row className="main-view justify-content-center">
           {selectedMovie
             ? (
