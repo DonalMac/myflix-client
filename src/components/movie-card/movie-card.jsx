@@ -1,38 +1,45 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { CardGroup, CardImg, Container, Button, Card } from "react-bootstrap";
-
-
-
-import './movie-card.scss';
+import React from "react";
+import PropTypes from "prop-types";
+import { Button, Card, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export class MovieCard extends React.Component {
   render() {
-    const { movie, onMovieClick } = this.props;
+    const { movie } = this.props;
 
     return (
-      <Container >
-        < CardGroup id="card" >
-          <Card id="movie-card">
-            <Card.Img variant="top" src="https://via.placeholder.com/75.png" />
-            <Card.Body>
-              <Card.Title id="card-title">{movie.Title}</Card.Title>
-              <Card.Text id="card-text">{movie.Description}</Card.Text>
-              <Button variant="primary" id="card-button" onClick={() => onMovieClick(movie)}>Open</Button>
-            </Card.Body>
-          </Card>
-        </CardGroup >
-      </Container >
+      <Card className="m-1">
+        <Link to={`/movies/${movie._id}`}>
+          <Card.Img
+            variant="top"
+            src={movie.ImagePath}
+            className="img-responsive"
+          />
+        </Link>
+
+        <Card.Body>
+          <Card.Title className="titles custom-card-title text-center">
+            {movie.Title}
+          </Card.Title>
+
+          <Card.Text>{movie.Description}</Card.Text>
+          <Link to={`/movies/${movie._id}`}>
+            <Container className="text-center">
+              <Button className="custom-btn" variant="link">
+                Open
+              </Button>
+            </Container>
+          </Link>
+        </Card.Body>
+      </Card>
     );
   }
 }
 
 MovieCard.propTypes = {
   movie: PropTypes.shape({
+    ImagePath: PropTypes.string.isRequired,
     Title: PropTypes.string.isRequired,
     Description: PropTypes.string.isRequired,
-    ImagePath: PropTypes.string.isRequired
   }).isRequired,
-  index: PropTypes.number.isRequired,
-  onMovieClick: PropTypes.func.isRequired
 };
