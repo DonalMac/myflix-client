@@ -4,7 +4,7 @@ import { Form, Button, Card, CardGroup, Container, Col, Row } from 'react-bootst
 import axios from 'axios';
 import './registration-view.scss';
 
-import { NavbarView } from "../navbar-view/navbar-view";
+
 
 
 export function RegistrationView(props) {
@@ -50,10 +50,10 @@ export function RegistrationView(props) {
     if (isReq) {
       /* Send request to the server for authentication */
       axios.post('https://mac-myflix.herokuapp.com/users', {
-        Name: name,
-        Password: password,
-        Email: email,
-        Birthday: birthday,
+        name: name,
+        password: password,
+        email: email,
+        birthday: birthday,
       })
         .then(response => {
           const data = response.data;
@@ -71,7 +71,7 @@ export function RegistrationView(props) {
 
   return (
 
-    <><NavbarView /><Row>
+    <><Row>
       <Col id="cardBody">
         <CardGroup>
           <Card>
@@ -140,9 +140,9 @@ export function RegistrationView(props) {
 
 RegistrationView.propTypes = {
   register: PropTypes.shape({
-    Name: PropTypes.string.isRequired,
-    Password: PropTypes.string.isRequired,
-    Email: PropTypes.string.isRequired,
-    Birthday: PropTypes.instanceOf(Date).isRequired,
+    name: PropTypes.string.isRequired,
+    password: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    birthday: PropTypes.instanceOf(Date).isRequired,
   }),
 };

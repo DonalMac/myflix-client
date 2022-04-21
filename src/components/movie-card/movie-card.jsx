@@ -1,14 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button, Card, Container } from "react-bootstrap";
+import { Button, Card, Container, CardGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
+
+import "./movie-card.scss"
 
 export class MovieCard extends React.Component {
   render() {
     const { movie } = this.props;
 
     return (
-      <Card className="m-1">
+      <Container >
+  < CardGroup id="card" >
+      <Card id="movie-card" >
         <Link to={`/movies/${movie._id}`}>
           <Card.Img
             variant="top"
@@ -17,21 +21,23 @@ export class MovieCard extends React.Component {
           />
         </Link>
 
-        <Card.Body>
-          <Card.Title className="titles custom-card-title text-center">
+        <Card.Body >
+          <Card.Title id="card-title">
             {movie.Title}
           </Card.Title>
 
-          <Card.Text>{movie.Description}</Card.Text>
+          <Card.Text id="card-text">{movie.Description}</Card.Text>
           <Link to={`/movies/${movie._id}`}>
-            <Container className="text-center">
-              <Button className="custom-btn" variant="link">
+
+              <Button id="card-button" variant="primary">
                 Open
               </Button>
-            </Container>
+
           </Link>
         </Card.Body>
       </Card>
+  </CardGroup>
+  </Container>
     );
   }
 }

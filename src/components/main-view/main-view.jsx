@@ -56,11 +56,11 @@ export class MainView extends React.Component {
   onLoggedIn(authData) {
     console.log(authData);
     this.setState({
-      user: authData.user.username,
+      user: authData.user.Name,
     });
 
     localStorage.setItem("token", authData.token);
-    localStorage.setItem("user", authData.user.username);
+    localStorage.setItem("user", authData.user.Name);
     this.getMovies(authData.token);
   }
 
@@ -190,33 +190,6 @@ export class MainView extends React.Component {
           />
 
           <Route
-            path="/actors/:name"
-            render={({ match, history }) => {
-              if (!user)
-                return (
-                  <Row>
-                    <Col>
-                      <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
-                    </Col>
-                  </Row>
-                );
-              if (movies.length === 0) return <div className="main-view" />;
-
-              return (
-                <Col md={8}>
-                  <ActorView
-                    actor={
-                      movies.find((m) => m.Actors[0].Name === match.params.name)
-                        .Actors
-                    }
-                    onBackClick={() => history.goBack()}
-                  />
-                </Col>
-              );
-            }}
-          />
-
-          <Route
             path={`/users/${user}`}
             render={({ match, history }) => {
               if (!user)
@@ -241,4 +214,3 @@ export class MainView extends React.Component {
     );
   }
 }
-

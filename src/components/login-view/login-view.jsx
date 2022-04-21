@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Form, Container, Button, Card, CardGroup, Col, Row } from 'react-bootstrap';
 import axios from 'axios';
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
 import './login-view.scss';
 
-import { NavbarView } from "../navbar-view/navbar-view";
+
 
 
 
@@ -62,7 +62,7 @@ export function LoginView(props) {
 
   return (
 
-    <><NavbarView /><Row>
+    <><Row>
       <Col id="cardBody">
         <CardGroup>
           <Card>
@@ -99,9 +99,6 @@ export function LoginView(props) {
 
 
 LoginView.propTypes = {
-  user: PropTypes.shape({
-    Name: PropTypes.string.isRequired,
-    Password: PropTypes.string.isRequired,
-  }),
+
   onLoggedIn: PropTypes.func.isRequired
 };

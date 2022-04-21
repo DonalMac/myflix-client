@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button, Card, Container, Col } from "react-bootstrap";
+import { Button, Card, Container, Col,Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
+
+import "./movie-view.scss"
 
 export class MovieView extends React.Component {
   constructor(props) {
@@ -28,14 +30,14 @@ export class MovieView extends React.Component {
       .then((response) => {
         //assign the result to the state
         this.setState({
-          name: response.data.name,
-          password: response.data.password,
-          email: response.data.email,
-          birthday: response.data.birthday,
-          favoriteMovies: response.data.favoriteMovies,
+          name: response.data.Name,
+          password: response.data.Password,
+          email: response.data.Email,
+          birthday: response.data.Birthday,
+          favoriteMovies: response.data.FavoriteMovies
         });
       })
-      .catch((e) => console.log(e));
+      .catch((e) => console.log("This is the problem"));
   }
   componentDidMount() {
     const accessToken = localStorage.getItem("token");
@@ -100,107 +102,45 @@ export class MovieView extends React.Component {
   }
   render() {
     const { movie, onBackClick } = this.props;
-    const { favoriteMovies, username, password, email, birthday } = this.state;
+    const { FavoriteMovies, Name, Password, Email, Birthday } = this.state;
     let movieId = this.props.movie._id;
     let userFav = this.state.favoriteMovies;
     let isFav = userFav.includes(movieId);
 
     return (
-      <Card>
-        <Container className="text-left p-4 card-custom">
-          <Button
-            variant="primary"
-            className="custom-btn"
-            onClick={() => {
-              onBackClick(null);
-            }}
-          >
-            Go Back
-          </Button>
-        </Container>
-        <Container className="text-center p-3 card-custom">
-          <Card.Img
-            className="movie-poster"
-            variant="top"
-            src={movie.ImagePath}
-          />
-        </Container>
+      <Container>
+        <Row>
+          <Col>
+            <Card id="movie-view">
+              <Card.Body>
+                <Card.Img id="movie-view-image" src="https://via.placeholder.com/350x150.png" /> //src={movie.ImagePath}
+                <Card.Title as="h2" id="movie-title">{movie.Title}</Card.Title>
+                <Card.Text as="h5" id="movie-description">
+                  {movie.Description}</Card.Text>
+                <Card.Text as="h5" id="movie-director" >
+                  Director:  <Link to={`/directors/${movie.Director.Name}`} >
+                                {movie.Director.Name}
+                              </Link></Card.Text>
+                <Card.Text as="h5" id="movie-genre" >
+                  Genre: <Link to={`/genres/${movie.Genre.Name}`}>
+                    {movie.Genre.Name}
+                  </Link>
+                  </Card.Text>
 
-        <Card.Body>
-          <Col className="d-sm-flex justify-content-between justify-content-xl-start">
-            <Card.Text className="label titles h3">Title: </Card.Text>
-            <span className="movie-title titles ml-3 h1">{movie.Title}</span>
+
+                <Button variant="primary" onClick={() => { onBackClick(null); }}>Back to Movies</Button>
+                  {!isFav && ( <Button  variant="primary"  id='FavButton' onClick={this.addFav}> Add to favorites </Button>
+                  )}
+                  {isFav && (  <Button  variant="primary"  id='FavButton'  onClick={this.removeFav}>
+                      Remove from favorites
+                    </Button>
+                  )}
+                </Card.Body>
+            </Card>
           </Col>
-
-          <Col className="d-sm-flex justify-content-between justify-content-xl-start">
-            <Card.Text className="label titles h3">Description: </Card.Text>
-            <span className="movie-description card-text ml-3 ">
-              {movie.Description}
-            </span>
-          </Col>
-
-          <Col className="d-sm-flex justify-content-between justify-content-xl-start">
-            <Card.Text className="label titles h3">Genre: </Card.Text>
-            <Link
-              className="titles movie-genre ml-3 h1"
-              to={`/genres/${movie.Genre.Name}`}
-            >
-              {movie.Genre.Name}
-            </Link>
-          </Col>
-
-          <Col className="d-sm-flex justify-content-between justify-content-xl-start">
-            <Card.Text className="label titles h3">Release Year: </Card.Text>
-            <span className="movie-release titles ml-3 h1 ">
-              {movie.releaseYear}
-            </span>
-          </Col>
-
-          <Col className="d-sm-flex justify-content-between justify-content-xl-start">
-            <Card.Text className="label titles h3">Director: </Card.Text>
-            <Link
-              className="movie-director titles ml-3 h1"
-              to={`/directors/${movie.Director.Name}`}
-            >
-              {movie.Director.Name}
-            </Link>
-          </Col>
-
-          {movie.Actors[0].Name && (
-            <Col className="d-sm-flex justify-content-between justify-content-xl-start">
-              <Card.Text className="label titles h3">Main Actor: </Card.Text>
-              <Link
-                className="titles movie-actor ml-3 h1"
-                to={`/actors/${movie.Actors[0].Name}`}
-              >
-                {movie.Actors[0].Name}
-              </Link>
-            </Col>
-          )}
-
-          <Container className="text-center p-2">
-            {!isFav && (
-              <Button
-                variant="primary"
-                className="custom-btn"
-                onClick={this.addFav}
-              >
-                Add to favorites
-              </Button>
-            )}
-            {isFav && (
-              <Button
-                variant="primary"
-                className="custom-btn"
-                onClick={this.removeFav}
-              >
-                Remove from favorites
-              </Button>
-            )}
-          </Container>
-        </Card.Body>
-      </Card>
-    );
+        </Row>
+      </Container>
+  );
   }
 }
 
@@ -223,18 +163,6 @@ MovieView.propTypes = {
     }),
 
     Description: PropTypes.string.isRequired,
-    releaseYear: PropTypes.arrayOf(PropTypes.number).isRequired,
-
-    Actors: PropTypes.arrayOf(
-      PropTypes.shape({
-        Name: PropTypes.string,
-        Bio: PropTypes.string,
-        Birth: PropTypes.string,
-        Death: PropTypes.string,
-        Movies: PropTypes.arrayOf(PropTypes.string),
-      })
-    ),
-
     ImagePath: PropTypes.string.isRequired,
   }).isRequired,
   onBackClick: PropTypes.func.isRequired,
