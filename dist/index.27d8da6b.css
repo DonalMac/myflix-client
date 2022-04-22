@@ -60,6 +60,10 @@
   font-size: 20px;
 }
 
+#movie-row {
+  margin-top: 60px;
+}
+
 #movie-view {
   border-radius: 10px;
   box-shadow: 5px 20px 50px #000;
@@ -79,9 +83,7 @@
 
 #movie-image {
   text-align: center;
-  height: 300px;
   justify-content: center;
-  margin-left: 30%;
   display: flex;
   box-shadow: 5px 20px 50px #000;
 }
@@ -114,6 +116,8 @@
   float: right;
 }
 
+
+
 .label {
   padding: 60px;
 }
@@ -139,7 +143,8 @@
 
 .LogRegPageButton {
   height: 50px;
-  background-color: #000;
+  float: right;
+  background: #000;
   border: none;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -171,7 +176,7 @@
   font-weight: 600;
 }
 
-span {
+#navSpan {
   color: #00fffd;
 }
 

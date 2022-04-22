@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Form, Button, Card, CardGroup, Container, Col, Row } from 'react-bootstrap';
 import axios from 'axios';
+import { Link } from "react-router-dom";
 import './registration-view.scss';
 
 
@@ -50,10 +51,10 @@ export function RegistrationView(props) {
     if (isReq) {
       /* Send request to the server for authentication */
       axios.post('https://mac-myflix.herokuapp.com/users', {
-        name: name,
-        password: password,
-        email: email,
-        birthday: birthday,
+        Name: name,
+        Password: password,
+        Email: email,
+        Birthday: birthday
       })
         .then(response => {
           const data = response.data;
@@ -71,7 +72,7 @@ export function RegistrationView(props) {
 
   return (
 
-    <><Row>
+    <Row>
       <Col id="cardBody">
         <CardGroup>
           <Card>
@@ -126,15 +127,20 @@ export function RegistrationView(props) {
                   onClick={handleSubmit}>
                   Register
                 </Button>
+                <Link to={"/"}>
+                  <Button variant="dark" className="LogRegPageButton">To Login Page
+                  </Button>
+                </Link>
               </Form>
             </Card.Body>
           </Card>
         </CardGroup>
       </Col>
-    </Row></>
+
+    </Row>
 
 
-  )
+  );
 
 }
 

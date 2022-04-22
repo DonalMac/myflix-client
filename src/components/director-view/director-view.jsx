@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button, Card, Container, Col } from "react-bootstrap";
+import { Button, Card, Container, Col, Row, ListGroup, ListGroupItem } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export class DirectorView extends React.Component {
@@ -8,37 +8,25 @@ export class DirectorView extends React.Component {
     const { director, movie, onBackClick } = this.props;
 
     return (
-      <Card>
+      <Card border="primary">
         <Card.Body>
           <Container className="director-view">
-            <Col className="d-sm-flex justify-content-between justify-content-xl-start">
-              <Card.Text className="label titles h3">Name: </Card.Text>
-              <span className="movie-director-bio titles ml-3 h1">
-                {director.Name}
-              </span>
-            </Col>
+            <Row >
+              <Card.Title >{director.Name}  </Card.Title>
+            </Row>
+            <Row >
 
-            <Col className="d-sm-flex justify-content-between justify-content-xl-start">
-              <Card.Text className="label titles h3">Bio: </Card.Text>
-              <span className="movie-director-bio card-text ml-3 ">
-                {director.Bio}
-              </span>
-            </Col>
+              <Card.Body>{director.Bio}  </Card.Body>
 
-            <Col className="d-sm-flex justify-content-between justify-content-xl-start">
-              <Card.Text className="label titles h3">Born: </Card.Text>
-              <span className="movie-director-birth titles ml-3 h1">
-                {director.Birth}
-              </span>
-            </Col>
+            </Row>
+            <Row >
+              <Card.Subtitle > Birth:  {director.Birth}  </Card.Subtitle>
+            </Row>
 
             {director.Death && (
-              <Col className="d-sm-flex justify-content-between justify-content-xl-start">
-                <Card.Text className="label titles h3">Death: </Card.Text>
-                <span className="movie-director-death titles ml-3 h1">
-                  {director.Death}
-                </span>
-              </Col>
+              <Row >
+                <Card.Text > Death:  {director.Death}  </Card.Text>
+              </Row>
             )}
           </Container>
           <Container className="d-flex justify-content-between">

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button, Card, Container, Col,Row } from "react-bootstrap";
+import { Button, Card, Container, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -56,7 +56,7 @@ export class MovieView extends React.Component {
       if (!isFav) {
         axios
           .post(
-            `https://mac-myflix.herokuapp.com/users/${user}/favoriteMovies/${id}`,
+            `https://mac-myflix.herokuapp.com/users/${user}/${id}`,
             {},
 
             { headers: { Authorization: `Bearer ${token}` } }
@@ -85,7 +85,7 @@ export class MovieView extends React.Component {
 
       axios
         .delete(
-          `https://mac-myflix.herokuapp.com/users/${user}/favoriteMovies/${id}`,
+          `https://mac-myflix.herokuapp.com/users/${user}/${id}`,
 
           { headers: { Authorization: `Bearer ${token}` } },
           {}
@@ -108,39 +108,36 @@ export class MovieView extends React.Component {
     let isFav = userFav.includes(movieId);
 
     return (
-      <Container>
-        <Row>
-          <Col>
-            <Card id="movie-view">
-              <Card.Body>
-                <Card.Img id="movie-view-image" src="https://via.placeholder.com/350x150.png" /> //src={movie.ImagePath}
-                <Card.Title as="h2" id="movie-title">{movie.Title}</Card.Title>
-                <Card.Text as="h5" id="movie-description">
-                  {movie.Description}</Card.Text>
-                <Card.Text as="h5" id="movie-director" >
-                  Director:  <Link to={`/directors/${movie.Director.Name}`} >
-                                {movie.Director.Name}
-                              </Link></Card.Text>
-                <Card.Text as="h5" id="movie-genre" >
-                  Genre: <Link to={`/genres/${movie.Genre.Name}`}>
-                    {movie.Genre.Name}
-                  </Link>
-                  </Card.Text>
+
+      <Row id="movie-row">
+        <Card id="movie-view">
+          <Card.Body>
+            <Card.Img id="movie-image" src={movie.ImagePath} />
+            <Card.Title as="h2" id="movie-title">{movie.Title}</Card.Title>
+            <Card.Text as="h5" id="movie-description">
+              {movie.Description}</Card.Text>
+            <Card.Text as="h5" id="movie-director" >
+              Director:  <Link to={`/directors/${movie.Director.Name}`} >
+                {movie.Director.Name}
+              </Link></Card.Text>
+            <Card.Text as="h5" id="movie-genre" >
+              Genre: <Link to={`/genres/${movie.Genre.Name}`}>
+                {movie.Genre.Name}
+              </Link>
+            </Card.Text>
 
 
-                <Button variant="primary" onClick={() => { onBackClick(null); }}>Back to Movies</Button>
-                  {!isFav && ( <Button  variant="primary"  id='FavButton' onClick={this.addFav}> Add to favorites </Button>
-                  )}
-                  {isFav && (  <Button  variant="primary"  id='FavButton'  onClick={this.removeFav}>
-                      Remove from favorites
-                    </Button>
-                  )}
-                </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
-  );
+            <Button variant="primary" onClick={() => { onBackClick(null); }}>Back to Movies</Button>
+            {!isFav && (<Button variant="primary" id='FavButton' onClick={this.addFav}> Add to favorites </Button>
+            )}
+            {isFav && (<Button variant="primary" id='FavButton' onClick={this.removeFav}>
+              Remove from favorites
+            </Button>
+            )}
+          </Card.Body>
+        </Card>
+      </Row>
+    );
   }
 }
 

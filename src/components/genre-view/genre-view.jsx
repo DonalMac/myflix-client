@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button, Card, Container, Col } from "react-bootstrap";
+import { Button, Card, Container, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export class GenreView extends React.Component {
@@ -11,19 +11,15 @@ export class GenreView extends React.Component {
       <Card>
         <Card.Body>
           <Container className="genre-view">
-            <Col className="d-sm-flex justify-content-between justify-content-xl-start">
-              <Card.Text className="label titles h3">Title: </Card.Text>
-              <span className="movie-director-bio titles ml-3 h1">
-                {genre.Name}
-              </span>
-            </Col>
+            <Row >
+              <Card.Title >{genre.Name}  </Card.Title>
+            </Row>
+            <Row >
 
-            <Col className="d-sm-flex justify-content-between justify-content-xl-start">
-              <Card.Text className="label titles h3">Description: </Card.Text>
-              <span className="movie-director-bio card-text  ml-3 ">
-                {genre.Description}
-              </span>
-            </Col>
+              <Card.Body>{genre.Description}  </Card.Body>
+
+            </Row>
+
           </Container>
           <Container className="d-flex justify-content-between">
             <Button

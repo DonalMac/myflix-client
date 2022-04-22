@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Container, Nav, Button, Offcanvas, NavDropdown, Form, FormControl } from 'react-bootstrap';
 
@@ -26,8 +25,11 @@ export function Navbar() {
 
   return (
     <Navbar id="navbar" fixed="top" position="sticky">
-      <Navbar.Brand id="navbar-brand" as={Link} to={"/"}>my<span>Flix</span></Navbar.Brand>
+      <Navbar.Brand id="navbar-brand" as={Link} to={"/"}>my<span id="navSpan">Flix</span></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
+
+
 
       {isAuth() && (
         <Navbar.Collapse id="basic-navbar-nav">

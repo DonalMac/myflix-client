@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Form, Container, Button, Card, CardGroup, Col, Row } from 'react-bootstrap';
 import axios from 'axios';
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import './login-view.scss';
 
@@ -55,18 +55,18 @@ export function LoginView(props) {
 
         })
         .catch(e => {
-          console.log('no such user really?')
+          console.log('Unable to find user')
         });
     }
   };
 
   return (
 
-    <><Row>
+    <Row>
       <Col id="cardBody">
         <CardGroup>
           <Card>
-            <Card.Body >
+            <Card.Body>
               <Card.Title id="cardTitle">Please Login to your myFlix account.</Card.Title>
               <Form>
                 <Form.Group controlId="formUsername">
@@ -85,18 +85,19 @@ export function LoginView(props) {
                 <Button variant="primary" className="LogRegButton" type="submit" onClick={handleSubmit}>
                   Login
                 </Button>
+                <Link to={"/register"}>
+                  <Button variant="dark" className="LogRegPageButton">To Registration
+                  </Button>
+                </Link>
 
               </Form>
             </Card.Body>
           </Card>
         </CardGroup>
       </Col>
-    </Row></>
-
-
+    </Row>
   );
 }
-
 
 LoginView.propTypes = {
 

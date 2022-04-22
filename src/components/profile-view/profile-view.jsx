@@ -2,23 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 //import PropTypes from "prop-types";
 import axios from "axios";
-import {
-  Card,
-  Form,
-  FormGroup,
-  Col,
-  Row,
-  Container,
-  FormControl,
-  Button,
-} from "react-bootstrap";
+import { Card, Form, FormGroup, Col, Row, Container, FormControl, Button } from "react-bootstrap";
+
+import './profile-view.scss';
 
 
 export class ProfileView extends React.Component {
   constructor() {
     super();
     this.state = {
-      username: null,
+      name: null,
       password: null,
       email: null,
       birthday: null,
@@ -30,18 +23,19 @@ export class ProfileView extends React.Component {
   getUser(token) {
     let user = localStorage.getItem("user");
     axios
-      .get(`https://my-flix-api-2022.herokuapp.com/users/${user}`, {
+      .get(`https://mac-myflix.herokuapp.com/users/${user}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
         //assign the result to the state
         this.setState({
-          username: response.data.username,
-          password: response.data.password,
-          email: response.data.email,
-          birthday: response.data.birthday,
-          favoriteMovies: response.data.favoriteMovies,
+          name: response.data.Name,
+          password: response.data.Password,
+          email: response.data.Email,
+          birthday: response.data.Birthday,
+          favoriteMovies: response.data.FavoriteMovies,
         });
+        console.log(response.data['Name']);
       })
       .catch((e) => console.log(e));
   }
@@ -65,25 +59,25 @@ export class ProfileView extends React.Component {
     const token = localStorage.getItem("token");
     axios
       .put(
-        `https://my-flix-api-2022.herokuapp.com/users/${user}`,
+        `https://mac-myflix.herokuapp.com/users/${user}`,
         {
-          username: this.state.username,
-          password: this.state.password,
-          email: this.state.email,
-          birthday: this.state.birthday,
+          Name: this.state.name,
+          Password: this.state.password,
+          Email: this.state.email,
+          Birthday: this.state.birthday,
         },
         { headers: { Authorization: `Bearer ${token}` } }
       )
       .then((response) => {
         this.setState({
-          username: response.data.username,
-          password: response.data.password,
-          email: response.data.email,
-          birthday: response.data.birthday,
+          name: response.data.Name,
+          password: response.data.Password,
+          email: response.data.Email,
+          birthday: response.data.Birthday,
         });
-        localStorage.setItem("user", this.state.username);
+        localStorage.setItem("user", this.state.name);
         alert("profile updated successfully!");
-        window.open("/profile", "_self");
+        window.open("/", "_self");
       });
   };
 
@@ -92,7 +86,7 @@ export class ProfileView extends React.Component {
     const token = localStorage.getItem("token");
     axios
       .delete(
-        `https://my-flix-api-2022.herokuapp.com/users/${username}`,
+        `https://mac-myflix.herokuapp.com/users/${username}`,
 
         { headers: { Authorization: `Bearer ${token}` } }
       )
@@ -101,13 +95,14 @@ export class ProfileView extends React.Component {
         alert("profile deleted");
         localStorage.removeItem("user");
         localStorage.removeItem("token");
+        window.open("/", "_self");
       })
       .catch((e) => console.log(e));
   }
 
   setUsername(value) {
     this.setState({
-      username: value,
+      name: value,
     });
   }
   setPassword(value) {
@@ -132,7 +127,7 @@ export class ProfileView extends React.Component {
 
     axios
       .delete(
-        `https://my-flix-api-2022.herokuapp.com/users/${user}/favoriteMovies/${id}`,
+        `https://mac-myflix.herokuapp.com/users/${user}/${id}`,
 
         { headers: { Authorization: `Bearer ${token}` } },
         {}
@@ -147,10 +142,11 @@ export class ProfileView extends React.Component {
 
   render() {
     const { movies, onBackClick } = this.props;
-    const { favoriteMovies, username, password, email, birthday } = this.state;
+    const { favoriteMovies, name, password, email, birthday } = this.state;
 
-    if (!username) {
+    if (!name) {
       return null;
+
     }
 
     return (
@@ -159,7 +155,7 @@ export class ProfileView extends React.Component {
           <Col>
             <Card>
               <Card.Body>
-                <div className="titles h1 text-center">Hi, {username}</div>
+                <div className="titles h1 text-center">Hi, {name}</div>
                 <Card.Title className="titles text-center custom-card-title">
                   View and update your details
                 </Card.Title>
@@ -168,7 +164,7 @@ export class ProfileView extends React.Component {
                   onSubmit={(e) =>
                     this.editProfile(
                       e,
-                      this.username,
+                      this.name,
                       this.password,
                       this.email,
                       this.birthday
@@ -182,8 +178,8 @@ export class ProfileView extends React.Component {
                         className="mb-3"
                         style={{ width: "40%" }}
                         type="text"
-                        name="username"
-                        placeholder={username}
+                        name="name"
+                        placeholder={name}
                         disabled
                       ></FormControl>
 
@@ -194,7 +190,7 @@ export class ProfileView extends React.Component {
                         {" "}
                         <FormControl
                           type="text"
-                          name="username"
+                          name="name"
                           placeholder="insert your new username here"
                           onChange={(e) => this.setUsername(e.target.value)}
                           required
@@ -266,7 +262,7 @@ export class ProfileView extends React.Component {
                   </FormGroup>
 
                   <FormGroup>
-                    <Form.Label className="titles h3">Birth date</Form.Label>
+                    <Form.Label className="titles h5">Birth date</Form.Label>
                     <Container className="d-flex flex-column flex-sm-row justify-content-between p-1">
                       <FormControl
                         className="mb-3"
@@ -295,7 +291,7 @@ export class ProfileView extends React.Component {
 
                   <Container>
                     <Button
-                      variant="primary custom-btn"
+                      variant="dark"
                       type="submit"
                       onClick={this.editProfile}
                     >
@@ -310,7 +306,7 @@ export class ProfileView extends React.Component {
                 <Button
                   style={{ width: "80%" }}
                   className="custom-btn-delete m-1"
-                  variant="primary"
+                  variant="danger"
                   type="submit"
                   onClick={this.deleteProfile}
                 >
@@ -325,11 +321,11 @@ export class ProfileView extends React.Component {
           <Card.Body>
             {favoriteMovies.length === 0 && (
               <div className="titles h1 text-center">
-                <h1>There's no movies in your list of favorites!</h1>
+                <h1>There are no movies in your list of favorites!</h1>
                 <p className="h5">
                   Head over to the{" "}
                   <Link to={`/`}>
-                    <Button className="custom-btn" type="submit">
+                    <Button variant="dark" type="submit">
                       List of movies
                     </Button>
                   </Link>{" "}
@@ -352,7 +348,7 @@ export class ProfileView extends React.Component {
                             {movie.Title}
                           </Card.Title>
                           <Button
-                            className="custom-btn"
+                            variant="dark"
                             onClick={this.removeFav}
                           >
                             Remove from List

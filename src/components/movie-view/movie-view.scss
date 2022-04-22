@@ -1,3 +1,7 @@
+#movie-row {
+  margin-top: 60px;
+}
+
 #movie-view {
   border-radius: 10px;
   box-shadow: 5px 20px 50px #000;
@@ -19,10 +23,8 @@
 #movie-image {
   justify-content: center;
   display: flex;
-  margin-left: 30%;
   text-align: center;
-  /* padding: 20px; */
-  height: 300px;
+  //height: 300px;
   box-shadow: 5px 20px 50px #000;
 }
 
