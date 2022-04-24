@@ -1,31 +1,57 @@
-$mainColor: linear-gradient(89deg, #0061f2 80%, rgb(0 255 161 / 99%) 100%);
+$mainColor: linear-gradient(154deg, #343a40 80%, #00fffd 100%);
 
-$backgroundColor: linear-gradient(89deg, #0061f2 0%, rgb(0 255 161 / 99%) 100%);
+$backgroundColor: linear-gradient(89deg, #343a40 0%, #00fffd 100%);
+$textColor:#d3d3d3;
+$fontSize:1.1em;
+$darkGreen:#00fffa26;
 
 #card {
-  padding-left: 1px;
-  padding-right: 5px;
-  margin-left: 5px;
+  padding-top: 60px;
+  //padding-left: 1px;
+  //padding-right: 5px;
+  //margin-left: 5px;
+
 }
 
 #movie-card {
-  margin-top: 5px;
+  border-radius: 5px;
+  //box-shadow: 5px 20px 50px #000;
+  background: $mainColor;
+  color: $textColor;
+  //cursor: pointer;
+
+}
+
+/*#card-body {
+  border-bottom: 1px solid $darkGreen;
+}*/
+
+#movieView-image {
+  justify-content: center;
+  display: flex;
   text-align: center;
-  background: #e3e7ec;
-  border-radius: 10px;
-  box-shadow: 5px 20px 30px #000;
-  cursor: pointer;
+  //height: 300px;
+  box-shadow: 5px 20px 50px #000;
+  //width: 25%;
 }
 
 #card-title {
+  background: #00fffa26;
+  color: #00fffd;
+  margin-top: 5px;
+  //font-size: 2.3em;
   justify-content: center;
-  padding: 0px;
-  height: 70px;
+  display: flex;
+  padding: 20px;
+  border-bottom: 1px solid black;
+  border-radius: 5px;
+  //font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 }
 
 #card-text {
   height: 155px;
+  border-bottom: 1px solid $darkGreen;
 }
 
 #card-button {

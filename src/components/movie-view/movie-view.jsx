@@ -108,35 +108,36 @@ export class MovieView extends React.Component {
     let isFav = userFav.includes(movieId);
 
     return (
-
       <Row id="movie-row">
         <Card id="movie-view">
           <Card.Body>
-            <Card.Img id="movie-image" src={movie.ImagePath} />
-            <Card.Title as="h2" id="movie-title">{movie.Title}</Card.Title>
-            <Card.Text as="h5" id="movie-description">
-              {movie.Description}</Card.Text>
-            <Card.Text as="h5" id="movie-director" >
-              Director:  <Link to={`/directors/${movie.Director.Name}`} >
-                {movie.Director.Name}
-              </Link></Card.Text>
-            <Card.Text as="h5" id="movie-genre" >
-              Genre: <Link to={`/genres/${movie.Genre.Name}`}>
-                {movie.Genre.Name}
-              </Link>
-            </Card.Text>
+            <Row >
+              <Col md={4}><Card.Img variant="top" id="movie-image" src="https://via.placeholder.com/75.png" /></Col>
 
+              <Col><Card.Title id="movie-title">{movie.Title}</Card.Title>
+                <Card.Text id="movie-description">{movie.Description}</Card.Text>
+                <Card.Text id="movie-director" >
+                  Director:  <Link to={`/directors/${movie.Director.Name}`} >
+                    {movie.Director.Name}
+                  </Link></Card.Text>
+                <Card.Text id="movie-genre" >
+                  Genre: <Link to={`/genres/${movie.Genre.Name}`}>
+                    {movie.Genre.Name}
+                  </Link>
+                </Card.Text></Col></Row>
+            <Row id="movie-row"><Col>
+              <Button variant="primary" onClick={() => { onBackClick(null); }}>Back to Movies</Button></Col>
+              <Col>{!isFav && (<Button variant="primary" id='FavButton' onClick={this.addFav}> Add to favorites </Button>
+              )}
+                {isFav && (<Button variant="primary" id='FavButton' onClick={this.removeFav}>
+                  Remove from favorites
+                </Button>
+                )}</Col>
 
-            <Button variant="primary" onClick={() => { onBackClick(null); }}>Back to Movies</Button>
-            {!isFav && (<Button variant="primary" id='FavButton' onClick={this.addFav}> Add to favorites </Button>
-            )}
-            {isFav && (<Button variant="primary" id='FavButton' onClick={this.removeFav}>
-              Remove from favorites
-            </Button>
-            )}
+            </Row>
           </Card.Body>
         </Card>
-      </Row>
+      </Row >
     );
   }
 }
