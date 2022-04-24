@@ -151,206 +151,208 @@ export class ProfileView extends React.Component {
 
     return (
 
-      <><Row>
-        <Col>
-          <Card id="card">
-            <Card.Body>
-              <div className="titles h1 text-center">Hi, {name}</div>
-              <Card.Title className="titles text-center custom-card-title">
-                View and update your details
-              </Card.Title>
-              <Form
-                className="update-form"
-                onSubmit={(e) => this.editProfile(
-                  e,
-                  this.name,
-                  this.password,
-                  this.email,
-                  this.birthday
-                )}
-              >
-                <FormGroup>
-                  <Form.Label className="titles h3">Username</Form.Label>
-                  <Container className="d-flex flex-column flex-sm-row justify-content-between p-1">
-                    <FormControl
-                      className="mb-3"
-                      style={{ width: "40%" }}
-                      type="text"
-                      name="name"
-                      placeholder={name}
-                      disabled
-                    ></FormControl>
+      <>
 
-                    <div
-                      className="p-0 d-flex-column"
-                      style={{ width: "50%" }}
-                    >
-                      {" "}
-                      <FormControl
-                        type="text"
-                        name="name"
-                        placeholder="insert your new username here"
-                        onChange={(e) => this.setUsername(e.target.value)}
-                        required />
-                      <Form.Text className="text-muted">
-                        Your username should be at least 4 characters long
-                      </Form.Text>
-                    </div>
-                  </Container>
-                </FormGroup>
-
-                <FormGroup>
-                  <Form.Label className="titles h3">Password</Form.Label>
-                  <Container className="d-flex flex-column flex-sm-row justify-content-between p-1">
-                    <FormControl
-                      className="mb-3"
-                      style={{ width: "40%" }}
-                      type="text"
-                      name="password"
-                      placeholder={password}
-                      disabled
-                    ></FormControl>
-
-                    <div
-                      className="p-0 d-flex-column"
-                      style={{ width: "50%" }}
-                    >
-                      {" "}
-                      <FormControl
-                        type="text"
-                        name="password"
-                        placeholder="insert your new password here"
-                        onChange={(e) => this.setPassword(e.target.value)}
-                        required />
-                      <Form.Text className="text-muted">
-                        Your password should be at least 8 characters long
-                      </Form.Text>
-                    </div>
-                  </Container>
-                </FormGroup>
-
-                <FormGroup>
-                  <Form.Label className="titles h3">Email</Form.Label>
-                  <Container className="d-flex flex-column flex-sm-row justify-content-between p-1">
-                    <FormControl
-                      className="mb-3"
-                      style={{ width: "40%" }}
-                      type="email"
-                      name="email"
-                      placeholder={email}
-                      disabled
-                    ></FormControl>
-
-                    <div
-                      className="p-0 d-flex-column"
-                      style={{ width: "50%" }}
-                    >
-                      {" "}
-                      <FormControl
-                        type="email"
-                        name="email"
-                        placeholder="insert your new email here"
-                        onChange={(e) => this.setEmail(e.target.value)}
-                        required />
-                    </div>
-                  </Container>
-                </FormGroup>
-
-                <FormGroup>
-                  <Form.Label className="titles h5">Birth date</Form.Label>
-                  <Container className="d-flex flex-column flex-sm-row justify-content-between p-1">
-                    <FormControl
-                      className="mb-3"
-                      style={{ width: "40%" }}
-                      type="text"
-                      name="birthday"
-                      placeholder={birthday}
-                      disabled
-                    ></FormControl>
-
-                    <div
-                      className="p-0 d-flex-column"
-                      style={{ width: "50%" }}
-                    >
-                      {" "}
-                      <FormControl
-                        type="date"
-                        name="birthday"
-                        placeholder="insert your new email here"
-                        onChange={(e) => this.setBirthday(e.target.value)}
-                        required />
-                    </div>
-                  </Container>
-                </FormGroup>
-
-                <Container>
-                  <Button
-                    variant="dark"
-                    type="submit"
-                    onClick={this.editProfile}
-                  >
-                    Update profile info
-                  </Button>
-                </Container>
-              </Form>
-            </Card.Body>
-          </Card>
-          <Card className="mt-2 mb-2">
-            <Container className="p-1 text-center card-custom">
-              <Button
-                style={{ width: "80%" }}
-                className="custom-btn-delete m-1"
-                variant="danger"
-                type="submit"
-                onClick={this.deleteProfile}
-              >
-                Delete your entire profile
-              </Button>{" "}
-            </Container>
-          </Card>
-        </Col>
-      </Row><Card>
-          <Card.Body>
-            {favoriteMovies.length === 0 && (
-              <div className="titles h1 text-center">
-                <h1>There are no movies in your list of favorites!</h1>
-                <p className="h5">
-                  Head over to the{" "}
-                  <Link to={`/`}>
-                    <Button variant="dark" type="submit">
-                      List of movies
-                    </Button>
-                  </Link>{" "}
-                  to add some
-                </p>
-              </div>
+        <Card.Body id="movie-cardDirReg">
+          <Card.Title id="card-titleDirReg">Hi {name}, View and update your details</Card.Title>
+          <Form
+            className="update-form"
+            onSubmit={(e) => this.editProfile(
+              e,
+              this.name,
+              this.password,
+              this.email,
+              this.birthday
             )}
-            <Row className="favorite-movies d-flex justify-content-around">
-              {favoriteMovies.length > 0 &&
-                movies.map((movie) => {
-                  if (movie._id ===
-                    favoriteMovies.find((fav) => fav === movie._id)) {
-                    return (
-                      <Card className="favorite-movie m-2" key={movie._id}>
-                        <Card.Img src={movie.ImagePath} />
-                        <Card.Body>
-                          <Card.Title className="h1 titles">
-                            {movie.Title}
-                          </Card.Title>
-                          <Button
-                            variant="dark"
-                            onClick={this.removeFav}
-                          >
-                            Remove from List
-                          </Button>
-                        </Card.Body>
-                      </Card>
-                    );
-                  }
-                })}
-            </Row>
-          </Card.Body>
-        </Card></>
+          >
+            <FormGroup>
+              <Form.Label >Username</Form.Label>
+              <Container id="profileContainer" className="d-flex flex-column flex-sm-row justify-content-between p-1">
+                <FormControl
+                  className="mb-3"
+                  style={{ width: "40%" }}
+                  type="text"
+                  name="name"
+                  placeholder={name}
+                  disabled
+                ></FormControl>
+
+                <div
+                  className="p-0 d-flex-column"
+                  style={{ width: "50%" }}
+                >
+                  {" "}
+                  <FormControl
+                    type="text"
+                    name="name"
+                    placeholder="insert your new username here"
+                    onChange={(e) => this.setUsername(e.target.value)}
+                    required />
+                  <Form.Text className="text-muted">
+                    Your username should be at least 4 characters long
+                  </Form.Text>
+                </div>
+              </Container>
+            </FormGroup>
+
+            <FormGroup>
+              <Form.Label >Password</Form.Label>
+              <Container id="profileContainer" className="d-flex flex-column flex-sm-row justify-content-between p-1">
+                <FormControl
+                  className="mb-3"
+                  style={{ width: "40%" }}
+                  type="text"
+                  name="password"
+                  placeholder={password}
+                  disabled
+                ></FormControl>
+
+                <div
+                  className="p-0 d-flex-column"
+                  style={{ width: "50%" }}
+                >
+                  {" "}
+                  <FormControl
+                    type="text"
+                    name="password"
+                    placeholder="insert your new password here"
+                    onChange={(e) => this.setPassword(e.target.value)}
+                    required />
+                  <Form.Text className="text-muted">
+                    Your password should be at least 8 characters long
+                  </Form.Text>
+                </div>
+              </Container>
+            </FormGroup>
+
+            <FormGroup>
+              <Form.Label >Email</Form.Label>
+              <Container id="profileContainer" className="d-flex flex-column flex-sm-row justify-content-between p-1">
+                <FormControl
+                  className="mb-3"
+                  style={{ width: "40%" }}
+                  type="email"
+                  name="email"
+                  placeholder={email}
+                  disabled
+                ></FormControl>
+
+                <div
+                  className="p-0 d-flex-column"
+                  style={{ width: "50%" }}
+                >
+                  {" "}
+                  <FormControl
+                    type="email"
+                    name="email"
+                    placeholder="insert your new email here"
+                    onChange={(e) => this.setEmail(e.target.value)}
+                    required />
+                </div>
+              </Container>
+            </FormGroup>
+
+            <FormGroup>
+              <Form.Label >Birth date</Form.Label>
+              <Container id="profileContainer" className="d-flex flex-column flex-sm-row justify-content-between p-1">
+                <FormControl
+                  className="mb-3"
+                  style={{ width: "40%" }}
+                  type="text"
+                  name="birthday"
+                  placeholder={birthday}
+                  disabled
+                ></FormControl>
+
+                <div
+                  className="p-0 d-flex-column"
+                  style={{ width: "50%" }}
+                >
+                  {" "}
+                  <FormControl
+                    type="date"
+                    name="birthday"
+                    placeholder="insert your new email here"
+                    onChange={(e) => this.setBirthday(e.target.value)}
+                    required />
+                </div>
+              </Container>
+            </FormGroup>
+
+            <Container id="profileContainer">
+              <Button
+                variant="primary"
+                type="submit"
+                onClick={this.editProfile}
+              >
+                Update profile info
+              </Button>
+            </Container>
+          </Form>
+        </Card.Body>
+
+
+
+        <Card id="movie-cardDirReg" className="mt-2 mb-2">
+          <Container className="p-1 text-center card-custom">
+            <Button
+              style={{ width: "80%" }}
+              className="custom-btn-delete m-1"
+              variant="danger"
+              type="submit"
+              onClick={this.deleteProfile}
+            >
+              Delete your entire profile
+            </Button>{" "}
+          </Container>
+        </Card>
+
+
+        <Card.Body id="movie-cardDirReg">
+          {favoriteMovies.length === 0 && (
+            <div className="titles h1 text-center">
+              <h1>There are no movies in your list of favorites!</h1>
+              <p className="h5">
+                Head over to the{" "}
+                <Link to={`/`}>
+                  <Button variant="primary" type="submit">
+                    List of movies
+                  </Button>
+                </Link>{" "}
+                to add some
+              </p>
+            </div>
+          )}
+          <div className="d-flex row mt-3 ml-1 stretch" id="mini-cardBG">
+            {favoriteMovies.length > 0 &&
+              movies.map((movie) => {
+                if (movie._id ===
+                  favoriteMovies.find((fav) => fav === movie._id)) {
+                  return (
+                    <Card key={movie._id} id="movieMini-card">
+
+                      <Card.Img variant="top" src={movie.ImagePath} />
+                      <Link to={`/movies/${movie._id}`}>
+                        <Card.Title id="card-title">{movie.Title}</Card.Title>
+                      </Link>
+                      <Card.Body>
+                        <Card.Text id="card-textMini">{movie.Description}</Card.Text>
+                      </Card.Body>
+
+                      <Container className="d-flex justify-content-between">
+                        <Button id="card-button" variant="primary"
+                          onClick={this.removeFav}
+                        >
+                          Remove from List
+                        </Button>
+                      </Container>
+                    </Card>
+                  );
+                }
+              })}
+          </div>
+        </Card.Body>
+      </>
 
     );
   }

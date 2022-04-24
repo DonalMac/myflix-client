@@ -3,50 +3,73 @@ import PropTypes from "prop-types";
 import { Button, Card, Container, Col, Row, ListGroup, ListGroupItem } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
+import "./director-view.scss"
+
 export class DirectorView extends React.Component {
   render() {
-    const { director, movie, onBackClick } = this.props;
+    const { director, movies, onBackClick } = this.props;
 
     return (
-      <Card border="primary">
-        <Card.Body>
-          <Container className="director-view">
-            <Row >
-              <Card.Title >{director.Name}  </Card.Title>
-            </Row>
-            <Row >
 
-              <Card.Body>{director.Bio}  </Card.Body>
+      <Card.Body id="movie-cardDirReg">
+        <Container className="director-view">
+          <Row >
+            <Card.Title id="card-titleDirReg" >{director.Name}  </Card.Title>
+          </Row>
+          <Row >
 
-            </Row>
+            <Card.Body>{director.Bio}  </Card.Body>
+
+          </Row>
+          <Row >
+            <Card.Subtitle > Birth:  {director.Birth}  </Card.Subtitle>
+          </Row>
+
+          {director.Death && (
             <Row >
-              <Card.Subtitle > Birth:  {director.Birth}  </Card.Subtitle>
+              <Card.Text > Death:  {director.Death}  </Card.Text>
             </Row>
+          )}
+        </Container>
 
-            {director.Death && (
-              <Row >
-                <Card.Text > Death:  {director.Death}  </Card.Text>
-              </Row>
-            )}
-          </Container>
-          <Container className="d-flex justify-content-between">
-            <Button
-              className="custom-btn"
-              type="submit"
-              onClick={() => {
-                onBackClick();
-              }}
-            >
-              Go back
+        <div className="d-flex row mt-3 ml-1 stretch" id="mini-cardBG">
+          {movies.map(movie => {
+            if (movie.Director.Name === director.Name) {
+              return (
+                <div key={movie._id}>
+                  <Card id="movieMini-card">
+                    <Card.Img variant="top" src={movie.ImagePath} />
+                    <Link to={`/movies/${movie._id}`}>
+                      <Card.Title id="card-titleMini">{movie.Title}</Card.Title>
+                    </Link>
+                    <Card.Body>
+                      <Card.Text id="card-textMini">{movie.Description}</Card.Text>
+                    </Card.Body>
+                  </Card>
+                </div>
+              );
+            }
+          })}
+        </div>
+
+        <Container className="d-flex justify-content-between">
+          <Button
+            className="custom-btn"
+            type="submit"
+            onClick={() => {
+              onBackClick();
+            }}
+          >
+            Go back
+          </Button>
+          <Link to={`/`}>
+            <Button className="custom-btn" type="submit">
+              Back to List
             </Button>
-            <Link to={`/`}>
-              <Button className="custom-btn" type="submit">
-                Back to List
-              </Button>
-            </Link>
-          </Container>
-        </Card.Body>
-      </Card>
+          </Link>
+        </Container>
+      </Card.Body >
+
     );
   }
 }

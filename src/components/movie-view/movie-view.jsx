@@ -127,9 +127,9 @@ export class MovieView extends React.Component {
                 </Card.Text></Col></Row>
             <Row id="movie-row"><Col>
               <Button variant="primary" onClick={() => { onBackClick(null); }}>Back to Movies</Button></Col>
-              <Col>{!isFav && (<Button variant="primary" id='FavButton' onClick={this.addFav}> Add to favorites </Button>
+              <Col>{!isFav && (<Button variant="dark" id='FavButton' onClick={this.addFav}> Add to favorites </Button>
               )}
-                {isFav && (<Button variant="primary" id='FavButton' onClick={this.removeFav}>
+                {isFav && (<Button variant="dark" id='FavButton' onClick={this.removeFav}>
                   Remove from favorites
                 </Button>
                 )}</Col>

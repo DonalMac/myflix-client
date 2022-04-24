@@ -152,12 +152,12 @@ export class MainView extends React.Component {
                 if (movies.length === 0) return <div className="main-view" />;
 
                 return (
-                  <Col xs={12} sm={12} md={10} lg={8} xl={10}>
+                  <Col xs={12} sm={12} md={10} lg={8} xl={8}>
                     <GenreView
                       genre={
                         movies.find((m) => m.Genre.Name === match.params.name)
-                          .Genre
-                      }
+                          .Genre} movies={movies}
+
                       onBackClick={() => history.goBack()}
                     />
                   </Col>
@@ -183,8 +183,8 @@ export class MainView extends React.Component {
                     <DirectorView
                       director={
                         movies.find((m) => m.Director.Name === match.params.name)
-                          .Director
-                      }
+                          .Director} movies={movies}
+
                       onBackClick={() => history.goBack()}
                     />
                   </Col>
