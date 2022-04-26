@@ -22726,7 +22726,7 @@ class MainView extends _reactDefault.default.Component {
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Row, {
-                        className: "main-view justify-content-md-center",
+                        className: "main-view justify-content-center",
                         children: [
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
                                 exact: true,
@@ -22744,7 +22744,9 @@ class MainView extends _reactDefault.default.Component {
                                     }, void 0, false, void 0, void 0);
                                     return movies.map((m)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
                                             col: 12,
-                                            md: 10,
+                                            xs: 12,
+                                            sm: 12,
+                                            md: 12,
                                             lg: 4,
                                             xl: 4,
                                             children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieCard.MovieCard, {
