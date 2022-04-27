@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 //import PropTypes from "prop-types";
 import axios from "axios";
-import { Card, Form, FormGroup, Col, Row, Container, FormControl, Button } from "react-bootstrap";
+import { Card, Form, FormGroup, Container, FormControl, Button } from "react-bootstrap";
 
 import './profile-view.scss';
 
@@ -141,7 +141,7 @@ export class ProfileView extends React.Component {
   }
 
   render() {
-    const { movies, onBackClick } = this.props;
+    const { movies } = this.props;
     const { favoriteMovies, name, password, email, birthday } = this.state;
 
     if (!name) {

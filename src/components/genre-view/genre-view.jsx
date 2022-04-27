@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button, Card, Container, Col, Row } from "react-bootstrap";
+import { Button, Card, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -8,16 +8,12 @@ import "./genre-view.scss"
 
 export class GenreView extends React.Component {
 
-  constructor() {
-    super();
 
-    this.state = {};
-  }
 
   render() {
     const { genre, movies, onBackClick } = this.props;
 
-    console.log(this.props.movies);
+    //console.log(this.props.movies);
 
     return (
       <Card.Body id="movie-cardDirReg">
@@ -73,3 +69,9 @@ export class GenreView extends React.Component {
   }
 }
 
+GenreView.proptypes = {
+  genre: PropTypes.shape({
+    Name: PropTypes.string.isRequired,
+    Description: PropTypes.string.isRequired,
+  }).isRequired,
+};

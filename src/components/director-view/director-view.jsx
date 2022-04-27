@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button, Card, Container, Col, Row, ListGroup, ListGroupItem } from "react-bootstrap";
+import { Button, Card, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import "./director-view.scss"
@@ -73,3 +73,12 @@ export class DirectorView extends React.Component {
     );
   }
 }
+
+DirectorView.proptypes = {
+  Director: PropTypes.shape({
+    Name: PropTypes.string,
+    Bio: PropTypes.string,
+    Birth: PropTypes.number,
+    Death: PropTypes.number,
+  }).isRequired,
+};

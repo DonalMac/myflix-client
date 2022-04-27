@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Navbar, Container, Col, Nav, Button, Offcanvas, NavDropdown, Form, FormControl } from 'react-bootstrap';
+import { Navbar, Col, Nav, NavDropdown } from 'react-bootstrap';
 
 import './navbar-view.scss';
 
