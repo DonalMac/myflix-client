@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button, Card, Container, Row } from "react-bootstrap";
+import { Button, Card, Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import "./director-view.scss"
@@ -31,7 +31,6 @@ export class DirectorView extends React.Component {
             </Row>
           )}
         </Container>
-
         <div className="d-flex row mt-3 ml-1 stretch" id="mini-cardBG">
           {movies.map(movie => {
             if (movie.Director.Name === director.Name) {
@@ -51,7 +50,6 @@ export class DirectorView extends React.Component {
             }
           })}
         </div>
-
         <Container className="d-flex justify-content-between">
           <Button
             className="custom-btn"

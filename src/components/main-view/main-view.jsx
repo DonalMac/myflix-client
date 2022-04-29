@@ -24,25 +24,7 @@ import "./main-view.scss"
 
 class MainView extends React.Component {
 
-  constructor() {
-    super();
-    this.state = {
-      //movies: [],
-      user: null,
-    };
 
-  }
-
-  // When token is present (user is logged in), get list of movies
-  componentDidMount() {
-    let accessToken = localStorage.getItem('token');
-    if (accessToken !== null) {
-      this.setState({
-        user: localStorage.getItem('user')
-      });
-      this.getMovies(accessToken);
-    }
-  }
 
   // Gets movies from API
   getMovies(token) {
@@ -58,12 +40,21 @@ class MainView extends React.Component {
       });
   }
 
+  // When token is present (user is logged in), get list of movies
+  componentDidMount() {
+    let accessToken = localStorage.getItem('token');
+    if (accessToken !== null) {
+      this.props.setUser(localStorage.getItem("user"));
+      this.getMovies(accessToken);
+      console.log("Access token present");
+    }
+  }
+
   /* When a user successfully logs in, this function updates the `user` property state to the *logged user*/
   onLoggedIn(authData) {
-    console.log(authData);
-    this.setState({
-      user: authData.user.Name,
-    });
+    console.log(authData.user.Name);
+    this.props.setUser(authData.user.Name);
+
 
     localStorage.setItem("token", authData.token);
     localStorage.setItem("user", authData.user.Name);
@@ -73,27 +64,21 @@ class MainView extends React.Component {
   onLoggedOut() {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    this.setState({
-      user: null,
-    });
+    console.log("Logout successful");
+    window.open("/", "_self");
   }
 
-  // Set user
-  setUser(user) {
-    this.setState({ user });
-    localStorage.setItem('user', JSON.stringify(user));
-  }
+
 
   render() {
-    let { movies } = this.props;
-    let { user } = this.state;
+    const { movies, user } = this.props;
 
     return (
       <Router>
         <Container fluid className="mainContainer">
-          <Row>
-            <Navbar user={user} />
-          </Row>
+
+          <Navbar user={user} />
+
           <Row className="main-view justify-content-md-center">
             <Route
               exact
@@ -101,9 +86,9 @@ class MainView extends React.Component {
               render={() => {
                 if (!user)
                   return (
-                    <Col lg={10} md={12}>
-                      <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
-                    </Col>
+
+                    <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
+
                   );
 
                 if (movies.length === 0) return <div className="main-view" />;
@@ -169,7 +154,7 @@ class MainView extends React.Component {
                 if (movies.length === 0) return <div className="main-view" />;
 
                 return (
-                  <Col xs={12} sm={12} md={10} lg={8} xl={8}>
+                  <Col xs={12} sm={12} md={10} lg={10} xl={10}>
                     <DirectorView
                       director={
                         movies.find((m) => m.Director.Name === match.params.name)

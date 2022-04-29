@@ -6,10 +6,6 @@ import { Link } from "react-router-dom";
 
 import './login-view.scss';
 
-
-
-
-
 export function LoginView(props) {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
@@ -52,6 +48,7 @@ export function LoginView(props) {
         .then(response => {
           const data = response.data;
           props.onLoggedIn(data);
+          console.log('Bazinga! Logged in');
 
         })
         .catch(e => {
@@ -62,40 +59,40 @@ export function LoginView(props) {
 
   return (
 
-    <Row>
-      <Col id="cardBody">
-        <CardGroup>
-          <Card>
-            <Card.Body>
-              <Card.Title id="cardTitle">Please Login to your myFlix account.</Card.Title>
-              <Form>
-                <Form.Group controlId="formUsername">
-                  <Form.Label>Name:</Form.Label>
-                  <Form.Control type="text" value={name} onChange={e => setName(e.target.value)} placeholder="Enter your Name" />
-                  {/* code added here to display validation error */}
-                  {nameErr && <p>{nameErr}</p>}
-                </Form.Group>
+    <Col className="login-view" sm={10} md={12} lg={6} xl={5}>
 
-                <Form.Group controlId="formPassword">
-                  <Form.Label>Password:</Form.Label>
-                  <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Enter your password" />
-                  {/* code added here to display validation error */}
-                  {passwordErr && <p>{passwordErr}</p>}
-                </Form.Group>
-                <Button variant="primary" className="LogRegButton" type="submit" onClick={handleSubmit}>
-                  Login
+      <CardGroup id="cardBody">
+        <Card>
+          <Card.Body>
+            <Card.Header id="cardTitle" as="h4">Please Login to your myFlix account.</Card.Header>
+            <Form>
+              <Form.Group controlId="formUsername">
+                <Form.Label>Name:</Form.Label>
+                <Form.Control type="text" value={name} onChange={e => setName(e.target.value)} placeholder="Enter your Name" />
+                {/* code added here to display validation error */}
+                {nameErr && <p>{nameErr}</p>}
+              </Form.Group>
+
+              <Form.Group controlId="formPassword">
+                <Form.Label>Password:</Form.Label>
+                <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Enter your password" />
+                {/* code added here to display validation error */}
+                {passwordErr && <p>{passwordErr}</p>}
+              </Form.Group>
+              <Button variant="primary" className="LogRegButton" type="submit" onClick={handleSubmit}>
+                Login
+              </Button>
+              <Link to={"/register"}>
+                <Button variant="dark" className="LogRegPageButton">To Registration
                 </Button>
-                <Link to={"/register"}>
-                  <Button variant="dark" className="LogRegPageButton">To Registration
-                  </Button>
-                </Link>
+              </Link>
 
-              </Form>
-            </Card.Body>
-          </Card>
-        </CardGroup>
-      </Col>
-    </Row>
+            </Form>
+          </Card.Body>
+        </Card>
+      </CardGroup>
+
+    </Col>
   );
 }
 
