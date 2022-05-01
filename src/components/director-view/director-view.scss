@@ -10,7 +10,7 @@ $darkGreen:#00fffa26;
 }
 
 #movie-cardDirReg {
-  padding-top: 60px;
+  // padding-top: 60px;
   border-radius: 5px;
   //box-shadow: 5px 20px 50px #000;
   background: $mainColor;
@@ -24,8 +24,9 @@ $darkGreen:#00fffa26;
   background: #0004047d;
   color: $textColor;
   //cursor: pointer;
-  width: 17rem;
-  margin: 1.2rem;
+  //width: 17rem;
+  // margin: 1.2rem;
+  margin-bottom: 20px;
 }
 
 /*#card-body {

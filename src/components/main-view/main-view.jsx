@@ -154,7 +154,7 @@ class MainView extends React.Component {
                 if (movies.length === 0) return <div className="main-view" />;
 
                 return (
-                  <Col xs={12} sm={12} md={10} lg={10} xl={10}>
+                  <Col xs={12} sm={12} md={12} lg={8} xl={10}>
                     <DirectorView
                       director={
                         movies.find((m) => m.Director.Name === match.params.name)

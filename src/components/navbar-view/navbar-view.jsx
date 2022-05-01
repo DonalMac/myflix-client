@@ -9,6 +9,11 @@ import './navbar-view.scss';
 export function Navbar({ visibilityFilter }) {
   let user = localStorage.getItem("user");
 
+  let visible = localStorage.getItem("visible");
+  visible = false;
+
+  console.log("visibility " + visible);
+
   const onLoggedOut = () => {
     localStorage.clear();
     window.open("/", "_self");
@@ -56,18 +61,15 @@ export function Navbar({ visibilityFilter }) {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
+          {visible === false && (
 
-          <Nav.Item className="nav-item-large justify-content-end d-none d-md-flex">
-            <VisibilityFilterInput visibilityFilter={visibilityFilter} />
-          </Nav.Item>
+            <Nav.Item className="nav-item-large justify-content-end d-none d-md-flex">
+              <VisibilityFilterInput visibilityFilter={visibilityFilter} />
+            </Nav.Item>
+          )}
         </Navbar.Collapse>
 
-
       )}
-
-
-
-
     </Navbar>
   );
 }

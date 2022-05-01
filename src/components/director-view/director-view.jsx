@@ -31,25 +31,29 @@ export class DirectorView extends React.Component {
             </Row>
           )}
         </Container>
-        <div className="d-flex row mt-3 ml-1 stretch" id="mini-cardBG">
+        <Row className="d-flex row mt-3 ml-1 stretch" >
+
           {movies.map(movie => {
             if (movie.Director.Name === director.Name) {
               return (
-                <div key={movie._id}>
-                  <Card id="movieMini-card">
-                    <Card.Img variant="top" src={movie.ImagePath} />
-                    <Link to={`/movies/${movie._id}`}>
-                      <Card.Title id="card-titleMini">{movie.Title}</Card.Title>
-                    </Link>
-                    <Card.Body>
-                      <Card.Text id="card-textMini">{movie.Description}</Card.Text>
-                    </Card.Body>
-                  </Card>
-                </div>
+                <Col md={4}>
+                  <div key={movie._id}>
+                    <Card id="movieMini-card">
+                      <Card.Img variant="top" src={movie.ImagePath} />
+                      <Link to={`/movies/${movie._id}`}>
+                        <Card.Title id="card-titleMini">{movie.Title}</Card.Title>
+                      </Link>
+                      <Card.Body>
+                        <Card.Text id="card-textMini">{movie.Description}</Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </div>
+                </Col>
               );
             }
           })}
-        </div>
+
+        </Row>
         <Container className="d-flex justify-content-between">
           <Button
             className="custom-btn"

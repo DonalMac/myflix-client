@@ -107,6 +107,7 @@ export class MovieView extends React.Component {
     let userFav = this.state.favoriteMovies;
     let isFav = userFav.includes(movieId);
 
+
     return (
       <Row id="movie-row">
         <Card id="movie-view">
