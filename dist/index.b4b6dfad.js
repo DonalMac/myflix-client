@@ -36709,8 +36709,8 @@ function LoginView(props) {
         className: "login-view",
         sm: 10,
         md: 12,
-        lg: 6,
-        xl: 5,
+        lg: 10,
+        xl: 8,
         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.CardGroup, {
             id: "cardBody",
             children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card, {
@@ -38645,11 +38645,15 @@ var _reactBootstrap = require("react-bootstrap");
 var _visibilityFilterInput = require("../visibility-filter-input/visibility-filter-input");
 var _visibilityFilterInputDefault = parcelHelpers.interopDefault(_visibilityFilterInput);
 var _navbarViewScss = require("./navbar-view.scss");
+var _s = $RefreshSig$();
 function Navbar({ visibilityFilter  }) {
+    _s();
     let user = localStorage.getItem("user");
-    let visible = localStorage.getItem("visible");
-    visible = false;
-    console.log("visibility " + visible);
+    let location = _reactRouterDom.useLocation();
+    const isVis = ()=>{
+        if (location.pathname.includes('directors') || location.pathname.includes('genres')) return false;
+        else return true;
+    };
     const onLoggedOut = ()=>{
         localStorage.clear();
         window.open("/", "_self");
@@ -38676,20 +38680,20 @@ function Navbar({ visibilityFilter  }) {
                         children: "Flix"
                     }, void 0, false, {
                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                        lineNumber: 36,
+                        lineNumber: 43,
                         columnNumber: 60
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                lineNumber: 36,
+                lineNumber: 43,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar.Toggle, {
                 "aria-controls": "basic-navbar-nav"
             }, void 0, false, {
                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                lineNumber: 40,
+                lineNumber: 47,
                 columnNumber: 7
             }, this),
             isAuth() && /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar.Collapse, {
@@ -38706,7 +38710,7 @@ function Navbar({ visibilityFilter  }) {
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 45,
+                                lineNumber: 52,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Nav.Link, {
@@ -38716,7 +38720,7 @@ function Navbar({ visibilityFilter  }) {
                                 children: "Logout"
                             }, void 0, false, {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 46,
+                                lineNumber: 53,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavDropdown, {
@@ -38729,7 +38733,7 @@ function Navbar({ visibilityFilter  }) {
                                         children: "Profile"
                                     }, void 0, false, {
                                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                                        lineNumber: 54,
+                                        lineNumber: 61,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavDropdown.Item, {
@@ -38737,12 +38741,12 @@ function Navbar({ visibilityFilter  }) {
                                         children: "Privacy"
                                     }, void 0, false, {
                                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                                        lineNumber: 57,
+                                        lineNumber: 64,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavDropdown.Divider, {}, void 0, false, {
                                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                                        lineNumber: 58,
+                                        lineNumber: 65,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavDropdown.Item, {
@@ -38750,48 +38754,53 @@ function Navbar({ visibilityFilter  }) {
                                         children: "Terms and Conditions"
                                     }, void 0, false, {
                                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                                        lineNumber: 59,
+                                        lineNumber: 66,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 53,
+                                lineNumber: 60,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                        lineNumber: 44,
+                        lineNumber: 51,
                         columnNumber: 11
                     }, this),
-                    visible === false && /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Nav.Item, {
+                    isVis() && /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Nav.Item, {
                         className: "nav-item-large justify-content-end d-none d-md-flex",
                         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_visibilityFilterInputDefault.default, {
                             visibilityFilter: visibilityFilter
                         }, void 0, false, {
                             fileName: "src/components/navbar-view/navbar-view.jsx",
-                            lineNumber: 67,
+                            lineNumber: 74,
                             columnNumber: 15
                         }, this)
                     }, void 0, false, {
                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                        lineNumber: 66,
+                        lineNumber: 73,
                         columnNumber: 13
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                lineNumber: 43,
+                lineNumber: 50,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/components/navbar-view/navbar-view.jsx",
-        lineNumber: 34,
+        lineNumber: 41,
         columnNumber: 5
     }, this);
 }
+_s(_reactBootstrap.Navbar, "pkHmaVRPskBaU4tMJuJJpV42k1I=", false, function() {
+    return [
+        _reactRouterDom.useLocation
+    ];
+});
 _c = _reactBootstrap.Navbar;
 var _c;
 $RefreshReg$(_c, "Navbar");

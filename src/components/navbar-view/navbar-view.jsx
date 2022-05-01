@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { Navbar, Col, Nav, NavDropdown } from 'react-bootstrap';
 
 import VisibilityFilterInput from '../visibility-filter-input/visibility-filter-input';
@@ -8,11 +9,17 @@ import './navbar-view.scss';
 
 export function Navbar({ visibilityFilter }) {
   let user = localStorage.getItem("user");
+  let location = useLocation();
 
-  let visible = localStorage.getItem("visible");
-  visible = false;
+  const isVis = () => {
+    if ((location.pathname.includes('directors')) || (location.pathname.includes('genres'))) {
+      return false;
+    } else {
+      return true;
+    }
+  };
 
-  console.log("visibility " + visible);
+
 
   const onLoggedOut = () => {
     localStorage.clear();
@@ -61,7 +68,7 @@ export function Navbar({ visibilityFilter }) {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          {visible === false && (
+          {isVis() && (
 
             <Nav.Item className="nav-item-large justify-content-end d-none d-md-flex">
               <VisibilityFilterInput visibilityFilter={visibilityFilter} />

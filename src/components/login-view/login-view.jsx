@@ -59,7 +59,7 @@ export function LoginView(props) {
 
   return (
 
-    <Col className="login-view" sm={10} md={12} lg={6} xl={5}>
+    <Col className="login-view" sm={10} md={12} lg={10} xl={8}>
 
       <CardGroup id="cardBody">
         <Card>
