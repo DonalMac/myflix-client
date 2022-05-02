@@ -62,7 +62,7 @@ export function Navbar({ visibilityFilter }) {
                 Profile
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Privacy</NavDropdown.Item>
-              <NavDropdown.Divider />
+
               <NavDropdown.Item href="#action/3.4">
                 Terms and Conditions
               </NavDropdown.Item>

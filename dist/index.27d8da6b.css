@@ -6,9 +6,13 @@
   padding: 60px;
 }
 
-#cardBody {
+#cardGroup {
   margin-top: 35px;
   padding: 50px;
+}
+
+.card {
+  background: #00e6e4 !important;
 }
 
 #cardTitle {
@@ -182,16 +186,16 @@
 }
 
 .navbar {
-  color: red;
   background: linear-gradient(89deg, #343a40 65%, #00fffd 100%);
   padding: 1rem;
   box-shadow: 0 4px 5px #0009;
 }
 
 .navbar .navbar-brand {
+  margin-right: 4rem;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2rem;
-  color: #7c7c7c !important;
+  color: #88ccc8 !important;
 }
 
 .navbar #navSpan {
@@ -213,11 +217,11 @@
 
 .navbar .dropdown-menu {
   border: none;
-  background: #121416 !important;
+  background: #292d32 !important;
 }
 
 .navbar .dropdown-menu .dropdown-item {
-  background: #7c7c7c !important;
+  background: #88ccc8 !important;
 }
 
 .navbar .dropdown-menu .dropdown-item:hover, .navbar .dropdown-menu .dropdown-item:focus {
@@ -226,11 +230,12 @@
 }
 
 .navbar .dropdown-menu .dropdown-divider {
-  border-top: 3px solid #56606a;
+  border-top: 1px solid #56606a;
 }
 
-.navbar .nav-link, .navbar #navText {
+.navbar .nav-link {
   color: #00fffd;
+  padding-top: 20px;
   padding-right: 50px;
   font-size: 20px;
   font-weight: 600;

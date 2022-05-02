@@ -13,9 +13,15 @@ $aquaColor:#00fffd;
   padding: 60px;
 }
 
-#cardBody {
+#cardGroup {
   margin-top: 35px;
   padding: 50px;
+
+}
+
+.card {
+
+  background: darken($aquaColor, 5%) !important;
 }
 
 #cardTitle {

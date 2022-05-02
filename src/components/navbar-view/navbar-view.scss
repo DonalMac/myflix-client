@@ -3,19 +3,18 @@ $realmainColor: linear-gradient(89deg, #343a40 65%, #00fffd 100%);
 $backgroundColor: #00fffd;
 
 $realbackgroundColor: linear-gradient(89deg, #343a40 0%, #00fffd 100%);
-$text:rgb(124, 124, 124);
+$text:#88ccc8;
 
 .navbar {
   background: $realmainColor;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.6);
   padding: 1rem;
-  color: red;
 
   .navbar-brand {
     color: $text !important;
     font-size: 2rem;
     font-family: Arial, Helvetica, sans-serif;
-    //margin-right: 4rem;
+    margin-right: 4rem;
   }
 
   #navSpan {
@@ -36,7 +35,7 @@ $text:rgb(124, 124, 124);
   }
 
   .dropdown-menu {
-    background: darken($mainColor, 15%) !important;
+    background: darken($mainColor, 5%) !important;
     border: none;
 
     .dropdown-item {
@@ -50,7 +49,7 @@ $text:rgb(124, 124, 124);
     }
 
     .dropdown-divider {
-      border-top: 3px solid lighten($mainColor, 15%);
+      border-top: 1px solid lighten($mainColor, 15%);
     }
   }
 
@@ -58,17 +57,11 @@ $text:rgb(124, 124, 124);
     font-size: 20px;
     font-weight: 600;
     color: #00fffd;
-    //padding-top: 15px;
+    padding-top: 20px;
     padding-right: 50px;
   }
 
-  #navText {
-    font-size: 20px;
-    font-weight: 600;
-    color: #00fffd;
-    //padding-top: 15px;
-    padding-right: 50px;
-  }
+
 
 
 

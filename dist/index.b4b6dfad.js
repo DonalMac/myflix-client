@@ -36712,7 +36712,7 @@ function LoginView(props) {
         lg: 10,
         xl: 8,
         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.CardGroup, {
-            id: "cardBody",
+            id: "cardGroup",
             children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card, {
                 children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Body, {
                     children: [
@@ -38742,11 +38742,6 @@ function Navbar({ visibilityFilter  }) {
                                     }, void 0, false, {
                                         fileName: "src/components/navbar-view/navbar-view.jsx",
                                         lineNumber: 64,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavDropdown.Divider, {}, void 0, false, {
-                                        fileName: "src/components/navbar-view/navbar-view.jsx",
-                                        lineNumber: 65,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavDropdown.Item, {

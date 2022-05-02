@@ -61,7 +61,7 @@ export function LoginView(props) {
 
     <Col className="login-view" sm={10} md={12} lg={10} xl={8}>
 
-      <CardGroup id="cardBody">
+      <CardGroup id="cardGroup">
         <Card>
           <Card.Body>
             <Card.Header id="cardTitle" as="h4">Please Login to your myFlix account.</Card.Header>
