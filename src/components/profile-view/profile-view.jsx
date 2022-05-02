@@ -12,14 +12,13 @@ import './profile-view.scss';
 class ProfileView extends React.Component {
   constructor() {
     super();
-    this.state = {
-      name: null,
-      password: null,
-      email: null,
-      birthday: null,
-      favoriteMovies: [],
-    };
+
     this.removeFav = this.removeFav.bind(this);
+  }
+
+  componentDidMount() {
+    const accessToken = localStorage.getItem("token");
+    this.getUser(accessToken);
   }
 
   getUser(token) {
@@ -29,22 +28,21 @@ class ProfileView extends React.Component {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
+
+        const data = response.data;
         //assign the result to the state
-        this.setState({
-          name: response.data.Name,
-          password: response.data.Password,
-          email: response.data.Email,
-          birthday: response.data.Birthday,
-          favoriteMovies: response.data.FavoriteMovies,
+        this.props.setUser({
+          name: data.Name,
+          password: data.Password,
+          email: data.Email,
+          birthday: data.Birthday,
+          favoriteMovies: data.FavoriteMovies,
         });
-        console.log(response.data['Name']);
+        console.log(data['Name']);
       })
       .catch((e) => console.log(e));
   }
-  componentDidMount() {
-    const accessToken = localStorage.getItem("token");
-    this.getUser(accessToken);
-  }
+
 
   onLoggedOut() {
     localStorage.removeItem("token");
@@ -71,13 +69,18 @@ class ProfileView extends React.Component {
         { headers: { Authorization: `Bearer ${token}` } }
       )
       .then((response) => {
-        this.setState({
-          name: response.data.Name,
-          password: response.data.Password,
-          email: response.data.Email,
-          birthday: response.data.Birthday,
+
+        const data = response.data;
+
+        this.props.updateUser({
+          name: data.Name,
+          password: data.Password,
+          email: data.Email,
+          birthday: data.Birthday,
         });
-        localStorage.setItem("user", this.state.name);
+        console.log(data.Name)
+        const newname = this.props.user.Name;
+        localStorage.setItem("user", newname);
         alert("profile updated successfully!");
         window.open("/", "_self");
       });
@@ -144,17 +147,14 @@ class ProfileView extends React.Component {
 
   render() {
     const { movies } = this.props;
-    const { favoriteMovies, name, password, email, birthday } = this.state;
+    const { favoriteMovies, name, password, email, birthday } = this.props.user || {};
 
     if (!name) {
       return null;
-
     }
 
     return (
-
       <>
-
         <Card.Body id="movie-cardDirReg">
           <Card.Title id="card-titleDirReg">Hi {name}, View and update your details</Card.Title>
           <Form
@@ -362,18 +362,10 @@ class ProfileView extends React.Component {
 
 ProfileView.propTypes = {
   user: PropTypes.shape({
-    Username: PropTypes.string,
-    Password: PropTypes.string,
-    Email: PropTypes.string,
-    Birthday: PropTypes.string,
-    FavoriteMovies: PropTypes.arrayOf(
-      PropTypes.shape({
-        _id: PropTypes.string.isRequired,
-        Title: PropTypes.string.isRequired,
-        ImagePath: PropTypes.string.isRequired,
-
-      })
-    )
+    name: PropTypes.string,
+    password: PropTypes.string,
+    email: PropTypes.string,
+    birthday: PropTypes.string,
   }),
   getUser: PropTypes.func,
   onBackClick: PropTypes.func,
