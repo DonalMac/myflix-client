@@ -1,13 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
-//import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import axios from "axios";
+import { connect } from 'react-redux';
+import { Link } from "react-router-dom";
 import { Card, Form, FormGroup, Container, FormControl, Button } from "react-bootstrap";
+
+import { setUser, updateUser } from '../../actions/actions';
 
 import './profile-view.scss';
 
-
-export class ProfileView extends React.Component {
+class ProfileView extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -357,3 +359,44 @@ export class ProfileView extends React.Component {
     );
   }
 }
+
+ProfileView.propTypes = {
+  user: PropTypes.shape({
+    Username: PropTypes.string,
+    Password: PropTypes.string,
+    Email: PropTypes.string,
+    Birthday: PropTypes.string,
+    FavoriteMovies: PropTypes.arrayOf(
+      PropTypes.shape({
+        _id: PropTypes.string.isRequired,
+        Title: PropTypes.string.isRequired,
+        ImagePath: PropTypes.string.isRequired,
+
+      })
+    )
+  }),
+  getUser: PropTypes.func,
+  onBackClick: PropTypes.func,
+  setUser: PropTypes.func,
+  updateUser: PropTypes.func
+};
+
+const mapStateToProps = state => {
+  return {
+    user: state.user,
+    movies: state.movies
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setUser: (user) => {
+      dispatch(setUser(user))
+    },
+    updateUser: (user) => {
+      dispatch(updateUser(user))
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileView);
