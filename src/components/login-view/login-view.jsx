@@ -39,6 +39,7 @@ export function LoginView(props) {
     e.preventDefault();
     const isReq = validate();
     if (isReq) {
+      console.log('isReq is working');
       /* Send a request to the server for authentication */
       axios.post('https://mac-myflix.herokuapp.com/login', {
         Name: name,
@@ -47,7 +48,7 @@ export function LoginView(props) {
       })
         .then(response => {
           const data = response.data;
-          props.onLoggedIn(data);
+          props.onLoggedIn(response.data);
           console.log('Bazinga! Logged in');
 
         })

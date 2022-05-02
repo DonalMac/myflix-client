@@ -24,6 +24,11 @@ import "./main-view.scss"
 
 class MainView extends React.Component {
 
+  // constructor method creates the component
+  constructor() {
+    super();
+  }
+
 
 
   // Gets movies from API
@@ -43,8 +48,9 @@ class MainView extends React.Component {
   // When token is present (user is logged in), get list of movies
   componentDidMount() {
     let accessToken = localStorage.getItem('token');
+
     if (accessToken !== null) {
-      this.props.setUser(localStorage.getItem("user"));
+      this.props.setUser({ user: localStorage.getItem("user") });
       this.getMovies(accessToken);
       console.log("Access token present");
     }
@@ -53,7 +59,9 @@ class MainView extends React.Component {
   /* When a user successfully logs in, this function updates the `user` property state to the *logged user*/
   onLoggedIn(authData) {
     console.log(authData.user.Name);
-    this.props.setUser(authData.user.Name);
+    this.props.setUser({
+      user: authData.user.Name
+    });
 
 
     localStorage.setItem("token", authData.token);
@@ -86,9 +94,7 @@ class MainView extends React.Component {
               render={() => {
                 if (!user)
                   return (
-
                     <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
-
                   );
 
                 if (movies.length === 0) return <div className="main-view" />;

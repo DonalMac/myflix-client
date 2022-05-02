@@ -11,10 +11,6 @@
   padding: 50px;
 }
 
-.card {
-  background: #00e6e4 !important;
-}
-
 #cardTitle {
   color: #00fffd;
   background: linear-gradient(89deg, #343a40 85%, #00fffd 100%);
