@@ -50,7 +50,8 @@ class MainView extends React.Component {
     let accessToken = localStorage.getItem('token');
 
     if (accessToken !== null) {
-      this.props.setUser({ user: localStorage.getItem("user") });
+      this.props.setUser({ user: localStorage.getItem('user') });
+
       this.getMovies(accessToken);
       console.log("Access token present");
     }
@@ -174,7 +175,7 @@ class MainView extends React.Component {
             />
 
             <Route
-              path={`/users/${user}`}
+              path={`/users/:name`}
               render={({ history }) => {
                 if (!user) return <Redirect to="/" />
                 if (movies.length === 0) return <div className="main-view" />;

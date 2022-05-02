@@ -48,7 +48,7 @@ export function LoginView(props) {
       })
         .then(response => {
           const data = response.data;
-          props.onLoggedIn(response.data);
+          props.onLoggedIn(data);
           console.log('Bazinga! Logged in');
 
         })
@@ -98,9 +98,6 @@ export function LoginView(props) {
 }
 
 LoginView.propTypes = {
-  user: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    password: PropTypes.string.isRequired,
-  }),
+
   onLoggedIn: PropTypes.func.isRequired,
 };
