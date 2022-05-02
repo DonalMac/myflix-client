@@ -79,7 +79,8 @@ class ProfileView extends React.Component {
           birthday: data.Birthday,
         });
         console.log(data.Name)
-        const newname = this.props.user.Name;
+        const newname = data.Name;
+        console.log(newname)
         localStorage.setItem("user", newname);
         alert("profile updated successfully!");
         window.open("/", "_self");
@@ -155,7 +156,7 @@ class ProfileView extends React.Component {
 
     return (
       <>
-        <Card.Body id="movie-cardDirReg">
+        <Card.Body id="profileCard">
           <Card.Title id="card-titleDirReg">Hi {name}, View and update your details</Card.Title>
           <Form
             className="update-form"

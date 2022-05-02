@@ -146,7 +146,12 @@
 
 
 
-
+#profileCard {
+  color: #d3d3d3;
+  background: linear-gradient(154deg, #343a40 80%, #00fffd 100%);
+  border-radius: 5px;
+  padding-top: 60px;
+}
 
 .label {
   padding: 60px;

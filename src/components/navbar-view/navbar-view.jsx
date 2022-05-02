@@ -12,7 +12,7 @@ export function Navbar({ visibilityFilter }) {
   let location = useLocation();
 
   const isVis = () => {
-    if ((location.pathname.includes('directors')) || (location.pathname.includes('genres'))) {
+    if ((location.pathname.includes('directors')) || (location.pathname.includes('genres') || (location.pathname.includes('users')))) {
       return false;
     } else {
       return true;
