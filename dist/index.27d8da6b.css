@@ -8,6 +8,11 @@
 
 #cardGroup {
   margin-top: 35px;
+}
+
+#cardLogin {
+  background: #fff;
+  margin-top: 35px;
   padding: 50px;
 }
 

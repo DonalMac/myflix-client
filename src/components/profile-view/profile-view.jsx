@@ -38,7 +38,8 @@ class ProfileView extends React.Component {
           birthday: data.Birthday,
           favoriteMovies: data.FavoriteMovies,
         });
-        console.log(data['Name']);
+        console.log("Set User data?");
+        console.log(this.props.user);
       })
       .catch((e) => console.log(e));
   }
