@@ -66,7 +66,7 @@ export function LoginView(props) {
 
         <Card.Body id="cardLogin">
           <Card.Header id="cardTitle" as="h4">Please Login to your myFlix account.</Card.Header>
-          <Form>
+          <Form id="cardForm">
             <Form.Group controlId="formUsername">
               <Form.Label>Name:</Form.Label>
               <Form.Control type="text" value={name} onChange={e => setName(e.target.value)} placeholder="Enter your Name" />

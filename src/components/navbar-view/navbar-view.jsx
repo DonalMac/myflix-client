@@ -7,7 +7,7 @@ import VisibilityFilterInput from '../visibility-filter-input/visibility-filter-
 import './navbar-view.scss';
 
 
-export function Navbar({ visibilityFilter }) {
+export function NavbarView({ visibilityFilter }) {
   let user = localStorage.getItem("user");
   let location = useLocation();
 

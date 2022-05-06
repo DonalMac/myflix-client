@@ -8,23 +8,21 @@ $darkGreen:#00fffa26;
   align-content: center;
 }
 
-
-
 .label {
   padding: 60px;
 }
 
 #cardGroup {
   margin-top: 35px;
-  //padding: 50px;
-  //background: $mainColor;
+  padding: 0px;
+
 
 }
 
 #cardLogin {
-  margin-top: 35px;
-  padding: 50px;
-  background: white;
+  // margin-top: 35px;
+  padding: 1px;
+  background: $backgroundColor;
 }
 
 #cardTitle {
@@ -49,4 +47,11 @@ $darkGreen:#00fffa26;
   height: 50px;
   border: white;
   margin-left: 50px;
+}
+
+#cardForm {
+  height: 50px;
+  border: black;
+
+  padding: 50px;
 }

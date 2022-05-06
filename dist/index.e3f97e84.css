@@ -1,3 +1,41 @@
+#card {
+  padding-top: 60px;
+}
+
+#movie-card {
+  color: #d3d3d3;
+  background: linear-gradient(154deg, #343a40 80%, #00fffd 100%);
+  border-radius: 5px;
+}
+
+#movieView-image {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  box-shadow: 5px 20px 50px #000;
+}
+
+#card-title {
+  color: #00fffd;
+  background: #00fffa26;
+  border-bottom: 1px solid #000;
+  border-radius: 5px;
+  justify-content: center;
+  margin-top: 5px;
+  padding: 20px;
+  display: flex;
+}
+
+#card-text {
+  height: 155px;
+  border-bottom: 1px solid #00fffa26;
+}
+
+#card-button {
+  width: 99%;
+  font-size: 20px;
+}
+
 .login-view {
   align-content: center;
 }
@@ -25,7 +63,7 @@
 .LogRegButton {
   height: 50px;
   background-color: #000;
-  border: none;
+  border: #fff;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -33,7 +71,7 @@
 .LogRegPageButton {
   height: 50px;
   background-color: #000;
-  border: none;
+  border: #fff;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 50px;
@@ -41,7 +79,7 @@
 
 #cardForm {
   height: 50px;
-  border: none;
+  border: #000;
   padding: 50px;
 }
 
@@ -182,7 +220,7 @@
 .LogRegButton {
   height: 50px;
   background-color: #000;
-  border: none;
+  border: #fff;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -191,7 +229,7 @@
   height: 50px;
   float: right;
   background: #000;
-  border: none;
+  border: #fff;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 50px;
@@ -272,44 +310,6 @@
   margin-bottom: 0;
 }
 
-#card {
-  padding-top: 60px;
-}
-
-#movie-card {
-  color: #d3d3d3;
-  background: linear-gradient(154deg, #343a40 80%, #00fffd 100%);
-  border-radius: 5px;
-}
-
-#movieView-image {
-  text-align: center;
-  justify-content: center;
-  display: flex;
-  box-shadow: 5px 20px 50px #000;
-}
-
-#card-title {
-  color: #00fffd;
-  background: #00fffa26;
-  border-bottom: 1px solid #000;
-  border-radius: 5px;
-  justify-content: center;
-  margin-top: 5px;
-  padding: 20px;
-  display: flex;
-}
-
-#card-text {
-  height: 155px;
-  border-bottom: 1px solid #00fffa26;
-}
-
-#card-button {
-  width: 99%;
-  font-size: 20px;
-}
-
 * {
   font-family: Ropa Sans, sans-serif;
 }
@@ -329,4 +329,4 @@ body {
   padding: 3em;
 }
 
-/*# sourceMappingURL=index.27d8da6b.css.map */
+/*# sourceMappingURL=index.e3f97e84.css.map */

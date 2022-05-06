@@ -18,7 +18,7 @@ import { DirectorView } from "../director-view/director-view";
 import { GenreView } from "../genre-view/genre-view";
 import ProfileView from "../profile-view/profile-view";
 import { RegistrationView } from "../registration-view/registration-view";
-import { Navbar } from "../navbar-view/navbar-view";
+import { NavbarView } from "../navbar-view/navbar-view";
 
 import "./main-view.scss"
 
@@ -86,7 +86,7 @@ class MainView extends React.Component {
       <Router>
         <Container fluid className="mainContainer">
 
-          <Navbar user={user} />
+          <NavbarView user={user} />
 
           <Row className="main-view justify-content-md-center">
             <Route
