@@ -1,0 +1,57 @@
+$mainColor: linear-gradient(89deg, #343a40 85%, #00fffd 100%);
+
+$backgroundColor: linear-gradient(89deg, #343a40 0%, #00fffd 100%);
+$aquaColor:#00fffd;
+$darkGreen:#00fffa26;
+
+.login-view {
+  align-content: center;
+}
+
+.label {
+  padding: 60px;
+}
+
+#cardGroup {
+  margin-top: 35px;
+  padding: 0px;
+
+
+}
+
+#cardLogin {
+  // margin-top: 35px;
+  padding: 1px;
+  background: $backgroundColor;
+}
+
+#cardTitle {
+  background: $mainColor;
+  padding: 50px;
+  color: $aquaColor;
+}
+
+.LogRegButton {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: black;
+  height: 50px;
+  border: white;
+
+}
+
+.LogRegPageButton {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: black;
+  height: 50px;
+  border: white;
+  margin-left: 50px;
+}
+
+#cardForm {
+  height: 50px;
+  border: black;
+
+  padding: 50px;
+}

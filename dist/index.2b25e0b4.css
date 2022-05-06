@@ -1,0 +1,193 @@
+.container {
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
+.col {
+  padding-top: 0;
+}
+
+.mainContainer {
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
+.logOutButton {
+  margin-top: 50px;
+  margin-bottom: 0;
+}
+
+
+
+:root {
+  --fontsize-navbar-brand: 30px;
+  --fontsize-navbar-link: 20px;
+  --fontweight-navbar-brand: 900;
+  --fontweight-navbar-link: 600;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#navbar {
+  background: linear-gradient(89deg, #343a40 65%, #00fffd 100%);
+}
+
+#navbar-container {
+  margin: 0;
+}
+
+#navbar-brand {
+  color: #d3d3d3;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+span {
+  color: #00fffd;
+}
+
+#nav-link {
+  color: #00fffd;
+  padding-top: 15px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.label {
+  padding: 60px;
+}
+
+#cardBody {
+  margin-top: 35px;
+  padding: 50px;
+}
+
+#cardTitle {
+  color: #00fffd;
+  background: linear-gradient(89deg, #343a40 85%, #00fffd 100%);
+  padding: 50px;
+}
+
+.LogRegButton {
+  height: 50px;
+  background-color: #000;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.LogRegPageButton {
+  height: 50px;
+  background-color: #000;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+}
+
+#card {
+  margin-left: 5px;
+  padding-left: 1px;
+  padding-right: 5px;
+}
+
+#movie-card {
+  text-align: center;
+  cursor: pointer;
+  background: #e3e7ec;
+  border-radius: 10px;
+  margin-top: 5px;
+  box-shadow: 5px 20px 30px #000;
+}
+
+#card-title {
+  height: 70px;
+  justify-content: center;
+  padding: 0;
+}
+
+#card-text {
+  height: 155px;
+}
+
+#card-button {
+  width: 99%;
+  font-size: 20px;
+}
+
+#movie-view {
+  border-radius: 10px;
+  box-shadow: 5px 20px 50px #000;
+}
+
+.movie-title {
+  color: #00fffd;
+  text-align: center;
+  background-color: #000;
+  justify-content: center;
+  margin-top: 5px;
+  padding: 20px;
+  font-size: 2.3em;
+  font-weight: bold;
+  display: flex;
+}
+
+#movie-image {
+  text-align: center;
+  height: 300px;
+  justify-content: center;
+  margin-left: 30%;
+  display: flex;
+  box-shadow: 5px 20px 50px #000;
+}
+
+.movie-description {
+  border-bottom: 1px solid #000;
+  justify-content: center;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  font-size: 1em;
+  line-height: 1.5;
+  display: flex;
+}
+
+#movie-genre {
+  color: #000;
+  border-bottom: 1px solid #000;
+  padding: 20px;
+  font-size: 1em;
+}
+
+#movie-director {
+  color: #00fffd;
+  background-color: #000;
+  padding: 20px;
+  font-size: 1em;
+}
+
+#FavButton {
+  float: right;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  min-width: 100%;
+  background: linear-gradient(89deg, #343a40 0%, #00fffd 100%);
+  flex-direction: column;
+  display: flex;
+}
+
+.footer {
+  height: 10px;
+  background: linear-gradient(89deg, #00fffd 0%, #343a40);
+  margin-top: auto;
+  padding: 3em;
+}
+
+/*# sourceMappingURL=index.2b25e0b4.css.map */

@@ -1,0 +1,332 @@
+.login-view {
+  align-content: center;
+}
+
+.label {
+  padding: 60px;
+}
+
+#cardGroup {
+  margin-top: 35px;
+  padding: 0;
+}
+
+#cardLogin {
+  background: linear-gradient(89deg, #343a40 0%, #00fffd 100%);
+  padding: 1px;
+}
+
+#cardTitle {
+  color: #00fffd;
+  background: linear-gradient(89deg, #343a40 85%, #00fffd 100%);
+  padding: 50px;
+}
+
+.LogRegButton {
+  height: 50px;
+  background-color: #000;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.LogRegPageButton {
+  height: 50px;
+  background-color: #000;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+}
+
+#cardForm {
+  height: 50px;
+  border: none;
+  padding: 50px;
+}
+
+#movie-row {
+  margin-top: 60px;
+}
+
+#movie-view {
+  color: #d3d3d3;
+  background: linear-gradient(154deg, #343a40 80%, #00fffd 100%);
+  border-radius: 5px;
+}
+
+#movie-image {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  box-shadow: 5px 20px 50px #000;
+}
+
+#movie-title {
+  color: #00fffd;
+  background: #00fffa26;
+  border-bottom: 1px solid #000;
+  border-radius: 5px;
+  justify-content: center;
+  margin-top: 5px;
+  padding: 20px;
+  font-size: 2.3em;
+  display: flex;
+}
+
+#movie-description {
+  border-bottom: 1px solid #00fffa26;
+  justify-content: center;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  font-size: 1.1em;
+  line-height: 1.5;
+  display: flex;
+}
+
+#movie-director, #movie-genre {
+  border-bottom: 1px solid #00fffa26;
+  padding: 20px;
+  font-size: 1.1em;
+}
+
+#FavButton {
+  float: right;
+}
+
+#profileContainer {
+  margin-top: 0;
+}
+
+#movie-cardDirReg {
+  color: #d3d3d3;
+  background: linear-gradient(154deg, #343a40 80%, #00fffd 100%);
+  border-radius: 5px;
+}
+
+#movieMini-card {
+  color: #d3d3d3;
+  background: #0004047d;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+#movieView-image {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  box-shadow: 5px 20px 50px #000;
+}
+
+#card-titleDirReg {
+  color: #00fffd;
+  background: #00fffa26;
+  border-bottom: 1px solid #000;
+  border-radius: 5px;
+  justify-content: center;
+  margin-top: 5px;
+  padding: 20px;
+  display: flex;
+}
+
+#card-titleMini {
+  color: #00fffd;
+  height: 80px;
+  background: #00fffa26;
+  border-bottom: 1px solid #000;
+  border-radius: 5px;
+  justify-content: center;
+  margin-top: 5px;
+  padding: 20px;
+  display: flex;
+}
+
+#card-textRegDir {
+  border-bottom: 1px solid #00fffa26;
+}
+
+#card-textMini {
+  height: 200px;
+  border-bottom: 1px solid #00fffa26;
+}
+
+#card-button {
+  width: 99%;
+  font-size: 20px;
+}
+
+
+
+#profileCard {
+  color: #d3d3d3;
+  background: linear-gradient(154deg, #343a40 80%, #00fffd 100%);
+  border-radius: 5px;
+  padding-top: 60px;
+}
+
+.label {
+  padding: 60px;
+}
+
+#cardBody {
+  margin-top: 35px;
+  padding: 50px;
+}
+
+#cardTitle {
+  color: #00fffd;
+  background: linear-gradient(89deg, #343a40 85%, #00fffd 100%);
+  padding: 50px;
+}
+
+.LogRegButton {
+  height: 50px;
+  background-color: #000;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.LogRegPageButton {
+  height: 50px;
+  float: right;
+  background: #000;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+}
+
+.navbar {
+  background: linear-gradient(89deg, #343a40 65%, #00fffd 100%);
+  padding: 1rem;
+  box-shadow: 0 4px 5px #0009;
+}
+
+.navbar .navbar-brand {
+  margin-right: 4rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  color: #88ccc8 !important;
+}
+
+.navbar #navSpan {
+  color: #00fffd;
+  font-size: 2rem;
+}
+
+.navbar .nav-item-large {
+  width: 33%;
+}
+
+.navbar .navbar-dropdown {
+  cursor: pointer;
+}
+
+.navbar .dropdown {
+  margin-right: 1rem;
+}
+
+.navbar .dropdown-menu {
+  border: none;
+  background: #292d32 !important;
+}
+
+.navbar .dropdown-menu .dropdown-item {
+  background: #88ccc8 !important;
+}
+
+.navbar .dropdown-menu .dropdown-item:hover, .navbar .dropdown-menu .dropdown-item:focus {
+  background: #343a40;
+  box-shadow: 0 3px 5px #0003 !important;
+}
+
+.navbar .dropdown-menu .dropdown-divider {
+  border-top: 1px solid #56606a;
+}
+
+.navbar .nav-link {
+  color: #00fffd;
+  padding-top: 20px;
+  padding-right: 50px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.container {
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
+.col {
+  padding-top: 0;
+}
+
+.mainContainer {
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
+.logOutButton {
+  margin-top: 50px;
+  margin-bottom: 0;
+}
+
+#card {
+  padding-top: 60px;
+}
+
+#movie-card {
+  color: #d3d3d3;
+  background: linear-gradient(154deg, #343a40 80%, #00fffd 100%);
+  border-radius: 5px;
+}
+
+#movieView-image {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  box-shadow: 5px 20px 50px #000;
+}
+
+#card-title {
+  color: #00fffd;
+  background: #00fffa26;
+  border-bottom: 1px solid #000;
+  border-radius: 5px;
+  justify-content: center;
+  margin-top: 5px;
+  padding: 20px;
+  display: flex;
+}
+
+#card-text {
+  height: 155px;
+  border-bottom: 1px solid #00fffa26;
+}
+
+#card-button {
+  width: 99%;
+  font-size: 20px;
+}
+
+* {
+  font-family: Ropa Sans, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  min-width: 100%;
+  background: linear-gradient(89deg, #343a40 0%, #00cfce 100%);
+  flex-direction: column;
+  display: flex;
+}
+
+.footer {
+  height: 10px;
+  background: linear-gradient(89deg, #00fffd 0%, #343a40);
+  margin-top: auto;
+  padding: 3em;
+}
+
+/*# sourceMappingURL=index.27d8da6b.css.map */

@@ -1,0 +1,15 @@
+$mainColor: linear-gradient(154deg, #343a40 80%, #00fffd 100%);
+
+$backgroundColor: linear-gradient(89deg, #343a40 0%, #00fffd 100%);
+$textColor:#d3d3d3;
+$fontSize:1.1em;
+$darkGreen:#00fffa26;
+
+#profileCard {
+  padding-top: 60px;
+  border-radius: 5px;
+  //box-shadow: 5px 20px 50px #000;
+  background: $mainColor;
+  color: $textColor;
+  //cursor: pointer;
+}

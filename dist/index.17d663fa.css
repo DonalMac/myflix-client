@@ -1,0 +1,121 @@
+.mainContainer {
+  margin-top: 50px;
+  background: linear-gradient(89deg, #0061f2 0%, rgba(0, 255, 161, 0.99) 100%);
+}
+
+#card {
+  padding-left: 1px;
+  padding-right: 5px;
+  margin-left: 5px;
+}
+
+#movie-card {
+  margin-top: 5px;
+  text-align: center;
+  background: #e3e7ec;
+  border-radius: 10px;
+  box-shadow: 5px 20px 30px #000;
+  cursor: pointer;
+}
+
+#card-title {
+  justify-content: center;
+  padding: 0px;
+  height: 70px;
+}
+
+.card-text {
+  height: 210px;
+}
+
+#card-button {
+  width: 99%;
+  background: linear-gradient(89deg, #0061f2 80%, rgba(0, 255, 161, 0.99) 100%);
+  color: #000;
+  font-size: 20px;
+}
+.container {
+  margin-top: 40px;
+}
+
+.movie-view {
+  width: 550px;
+  height: 800px;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+  border-radius: 10px;
+  box-shadow: 5px 20px 50px #000;
+  color: white;
+}
+
+.movie-title {
+  font-size: 2.3em;
+  justify-content: center;
+  display: flex;
+  margin: 20px;
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+}
+
+.movie-image {
+  justify-content: center;
+  display: flex;
+  margin-left: 30%;
+  text-align: center;
+  /* padding: 20px; */
+  height: 300px;
+  box-shadow: 5px 20px 50px #000;
+}
+
+.movie-description {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 20px;
+  padding-top: 30px;
+  font-size: 1em;
+  line-height: 1.5;
+  justify-content: center;
+  display: flex;
+}
+
+.movie-genre {
+  font-weight: bold;
+  padding-top: 0px;
+  padding-left: 30px;
+  padding-bottom: 30px;
+}
+:root {
+  --fontsize-navbar-brand: 30px;
+  --fontsize-navbar-link: 20px;
+  --fontweight-navbar-brand: 900;
+  --fontweight-navbar-link: 600;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#navbar {
+  background: linear-gradient(89deg, #0061f2 50%, rgba(0, 255, 161, 0.99) 100%);
+}
+
+#navbar-container {
+  margin: 0;
+}
+
+#navbar-brand {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+#nav-link {
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+  padding-top: 15px;
+}
+.my-flix {
+  color: steelblue;
+}
+/*# sourceMappingURL=index.17d663fa.css.map */

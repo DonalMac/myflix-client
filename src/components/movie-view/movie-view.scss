@@ -1,0 +1,65 @@
+$mainColor: linear-gradient(154deg, #343a40 80%, #00fffd 100%);
+
+$backgroundColor: linear-gradient(89deg, #343a40 0%, #00fffd 100%);
+$textColor:#d3d3d3;
+$fontSize:1.1em;
+$darkGreen:#00fffa26;
+
+#movie-row {
+  margin-top: 60px;
+}
+
+#movie-view {
+  border-radius: 5px;
+  //box-shadow: 5px 20px 50px #000;
+  background: $mainColor;
+  color: $textColor;
+}
+
+#movie-image {
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  //height: 300px;
+  box-shadow: 5px 20px 50px #000;
+  //width: 25%;
+}
+
+#movie-title {
+  background: #00fffa26;
+  color: #00fffd;
+  margin-top: 5px;
+  font-size: 2.3em;
+  justify-content: center;
+  display: flex;
+  padding: 20px;
+  border-bottom: 1px solid black;
+  border-radius: 5px;
+}
+
+#movie-description {
+  padding-left: 15px;
+  padding-bottom: 15px;
+  font-size: $fontSize;
+  line-height: 1.5;
+  justify-content: center;
+  display: flex;
+  border-bottom: 1px solid $darkGreen;
+}
+
+#movie-director {
+  border-bottom: 1px solid $darkGreen;
+  font-size: $fontSize;
+  padding: 20px;
+}
+
+#movie-genre {
+
+  padding: 20px;
+  border-bottom: 1px solid $darkGreen;
+  font-size: $fontSize;
+}
+
+#FavButton {
+  float: right;
+}

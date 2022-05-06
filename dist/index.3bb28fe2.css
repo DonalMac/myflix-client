@@ -1,0 +1,107 @@
+.label {
+  padding: 60px;
+}
+
+#cardBody {
+  margin-top: 35px;
+  padding: 50px;
+}
+
+#cardTitle {
+  color: #00fffd;
+  background: linear-gradient(89deg, #343a40 85%, #00fffd 100%);
+  padding: 50px;
+}
+
+.LogRegButton {
+  height: 50px;
+  background-color: #000;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.LogRegPageButton {
+  height: 50px;
+  background-color: #000;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+}
+
+:root {
+  --fontsize-navbar-brand: 30px;
+  --fontsize-navbar-link: 20px;
+  --fontweight-navbar-brand: 900;
+  --fontweight-navbar-link: 600;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#navbar {
+  background: linear-gradient(89deg, #343a40 65%, #00fffd 100%);
+}
+
+#navbar-container {
+  margin: 0;
+}
+
+#navbar-brand {
+  color: #d3d3d3;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+span {
+  color: #00fffd;
+}
+
+#nav-link {
+  color: #00fffd;
+  padding-top: 15px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.container {
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
+.col {
+  padding-top: 0;
+}
+
+.mainContainer {
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
+.logOutButton {
+  margin-top: 50px;
+  margin-bottom: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  min-width: 100%;
+  background: linear-gradient(89deg, #343a40 0%, #00fffd 100%);
+  flex-direction: column;
+  display: flex;
+}
+
+.footer {
+  height: 10px;
+  background: linear-gradient(89deg, #00fffd 0%, #343a40);
+  margin-top: auto;
+  padding: 3em;
+}
+
+/*# sourceMappingURL=index.3bb28fe2.css.map */

@@ -1,0 +1,43 @@
+$mainColor: linear-gradient(89deg, #343a40 85%, #00fffd 100%);
+
+$backgroundColor: linear-gradient(89deg, #343a40 0%, #00fffd 100%);
+$aquaColor:#00fffd;
+
+
+
+
+
+.label {
+  padding: 60px;
+}
+
+#cardBody {
+  margin-top: 35px;
+  padding: 50px;
+}
+
+#cardTitle {
+  background: $mainColor;
+  padding: 50px;
+  color: $aquaColor;
+}
+
+.LogRegButton {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: black;
+  height: 50px;
+  border: white;
+
+
+}
+
+.LogRegPageButton {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: black;
+  height: 50px;
+  border: white;
+  margin-left: 50px;
+  float: right;
+}
