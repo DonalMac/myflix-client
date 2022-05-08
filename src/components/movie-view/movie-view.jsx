@@ -113,7 +113,7 @@ export class MovieView extends React.Component {
         <Card id="movie-view">
           <Card.Body>
             <Row >
-              <Col md={4}><Card.Img variant="top" id="movie-image" src="https://via.placeholder.com/75.png" /></Col>
+              <Col md={4}><Card.Img variant="top" id="movie-image" src={movie.ImagePath} crossOrigin="anonymous" /></Col>
 
               <Col><Card.Title id="movie-title">{movie.Title}</Card.Title>
                 <Card.Text id="movie-description">{movie.Description}</Card.Text>

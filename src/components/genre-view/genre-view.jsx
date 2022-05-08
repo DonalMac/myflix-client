@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button, Card, Container, Row } from "react-bootstrap";
+import { Button, Card, Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -28,25 +28,27 @@ export class GenreView extends React.Component {
           </Row>
 
         </Container>
-        <div className="d-flex row mt-3 ml-1" id="mini-cardBG">
+        <Row className="d-flex row mt-3 ml-1" id="mini-cardBG">
           {movies.map((movie) => {
             if (movie.Genre.Name === genre.Name) {
               return (
-                <div key={movie._id} >
-                  <Card id="movieMini-card">
-                    <Card.Img variant="top" src={movie.ImagePath} />
-                    <Link to={`/movies/${movie._id}`}>
-                      <Card.Title id="card-titleMini">{movie.Title}</Card.Title>
-                    </Link>
-                    <Card.Body >
-                      <Card.Text id="card-textMini">{movie.Description}</Card.Text>
-                    </Card.Body>
-                  </Card>
-                </div>
+                <Col md={12} lg={4}>
+                  <div key={movie._id} >
+                    <Card id="movieMini-card">
+                      <Card.Img variant="top" src={movie.ImagePath} />
+                      <Link to={`/movies/${movie._id}`}>
+                        <Card.Title id="card-titleMini">{movie.Title}</Card.Title>
+                      </Link>
+                      <Card.Body >
+                        <Card.Text id="card-textMini">{movie.Description}</Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </div>
+                </Col>
               );
             }
           })}
-        </div>
+        </Row>
         <Container className="d-flex justify-content-between">
           <Button
             className="custom-btn"

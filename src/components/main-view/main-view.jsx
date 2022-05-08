@@ -110,9 +110,9 @@ class MainView extends React.Component {
               render={() => {
                 if (user) return <Redirect to="/" />;
                 return (
-                  <Col lg={10} md={12}>
-                    <RegistrationView />
-                  </Col>
+
+                  <RegistrationView />
+
                 );
               }}
             />
@@ -141,7 +141,7 @@ class MainView extends React.Component {
                 if (movies.length === 0) return <div className="main-view" />;
 
                 return (
-                  <Col xs={12} sm={12} md={10} lg={8} xl={8}>
+                  <Col xs={12} sm={12} md={12} lg={8} xl={10}>
                     <GenreView
                       genre={
                         movies.find((m) => m.Genre.Name === match.params.name)

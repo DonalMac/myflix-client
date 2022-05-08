@@ -1,9 +1,9 @@
 $mainColor: linear-gradient(154deg, #343a40 80%, #00fffd 100%);
 
 $backgroundColor: linear-gradient(89deg, #343a40 0%, #00fffd 100%);
-$textColor:#d3d3d3;
-$fontSize:1.1em;
-$darkGreen:#00fffa26;
+$textColor: #d3d3d3;
+$fontSize: 1.1em;
+$darkGreen: #00fffa26;
 
 #profileCard {
   padding-top: 60px;
@@ -12,4 +12,9 @@ $darkGreen:#00fffa26;
   background: $mainColor;
   color: $textColor;
   //cursor: pointer;
+}
+
+.imgBox {
+  height: 200px;
+  clear: left;
 }

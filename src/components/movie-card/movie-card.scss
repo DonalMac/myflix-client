@@ -1,12 +1,12 @@
 $mainColor: linear-gradient(154deg, #343a40 80%, #00fffd 100%);
 
 $backgroundColor: linear-gradient(89deg, #343a40 0%, #00fffd 100%);
-$textColor:#d3d3d3;
-$fontSize:1.1em;
-$darkGreen:#00fffa26;
+$textColor: #d3d3d3;
+$fontSize: 1.1em;
+$darkGreen: #00fffa26;
 
 #card {
-  padding-top: 60px;
+  padding-top: 35px;
   //padding-left: 1px;
   //padding-right: 5px;
   //margin-left: 5px;
@@ -19,7 +19,17 @@ $darkGreen:#00fffa26;
   background: $mainColor;
   color: $textColor;
   //cursor: pointer;
+  padding: 0px;
 
+}
+
+#card-body {
+  border-radius: 5px;
+  //box-shadow: 5px 20px 50px #000;
+  //background: $mainColor;
+  color: $textColor;
+  //cursor: pointer;
+  border-bottom: 1px solid $darkGreen;
 }
 
 /*#card-body {
@@ -51,10 +61,11 @@ $darkGreen:#00fffa26;
 
 #card-text {
   height: 155px;
-  border-bottom: 1px solid $darkGreen;
+  //border-bottom: 1px solid $darkGreen;
 }
 
 #card-button {
+  border-bottom: 1px solid $darkGreen;
   width: 99%;
   font-size: 20px;
 }

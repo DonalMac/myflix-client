@@ -36,7 +36,7 @@ export class DirectorView extends React.Component {
           {movies.map(movie => {
             if (movie.Director.Name === director.Name) {
               return (
-                <Col md={4}>
+                <Col md={12} lg={4}>
                   <div key={movie._id}>
                     <Card id="movieMini-card">
                       <Card.Img variant="top" src={movie.ImagePath} />
