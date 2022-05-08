@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import axios from "axios";
 import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
-import { Card, Form, FormGroup, Container, FormControl, Button } from "react-bootstrap";
+import { Card, Form, FormGroup, Container, FormControl, Button, Col, Row } from "react-bootstrap";
 
 import { setUser, updateUser } from '../../actions/actions';
 
@@ -333,24 +333,29 @@ class ProfileView extends React.Component {
                 if (movie._id ===
                   favoriteMovies.find((fav) => fav === movie._id)) {
                   return (
-                    <Card key={movie._id} id="movieMini-card">
+                    <Col md={12} lg={4}>
+                      <Card key={movie._id} id="movieMini-card">
+                        <Row >
+                          <Card.Img variant="top" src={movie.ImagePath} />
+                        </Row>
+                        <Row>
+                          <Link to={`/movies/${movie._id}`}>
+                            <Card.Title id="card-title">{movie.Title}</Card.Title>
+                          </Link>
+                        </Row>
+                        <Card.Body>
+                          <Card.Text id="card-textMini">{movie.Description}</Card.Text>
+                        </Card.Body>
 
-                      <Card.Img variant="top" src={movie.ImagePath} />
-                      <Link to={`/movies/${movie._id}`}>
-                        <Card.Title id="card-title">{movie.Title}</Card.Title>
-                      </Link>
-                      <Card.Body>
-                        <Card.Text id="card-textMini">{movie.Description}</Card.Text>
-                      </Card.Body>
-
-                      <Container className="d-flex justify-content-between">
-                        <Button id="card-button" variant="primary"
-                          onClick={this.removeFav}
-                        >
-                          Remove from List
-                        </Button>
-                      </Container>
-                    </Card>
+                        <Container className="d-flex justify-content-between">
+                          <Button id="card-button" variant="primary"
+                            onClick={this.removeFav}
+                          >
+                            Remove from List
+                          </Button>
+                        </Container>
+                      </Card>
+                    </Col>
                   );
                 }
               })}

@@ -42,22 +42,20 @@ export function NavbarView({ visibilityFilter }) {
 
       <Navbar.Brand id="navbar-brand" as={Link} to={"/"}>my<span id="navSpan">Flix</span></Navbar.Brand>
 
-
-
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
       {isAuth() && (
         <Navbar.Collapse >
-          <Nav className="me-auto" id="NavText">
-            <Nav.Link to={`/`}>Hi, {user}</Nav.Link>
-            <Nav.Link
+          <Nav className="me-auto" >
+            <Nav.Link id="navText" to={`/`}>Hi, {user}</Nav.Link>
+            <Nav.Link id="navText"
               onClick={() => {
                 onLoggedOut();
               }}
             >
               Logout
             </Nav.Link>
-            <NavDropdown title="My Account" id="basic-nav-dropdown">
+            <NavDropdown title="My Account" id="navText">
               <NavDropdown.Item as={Link} to={`/users/${user}`}>
                 Profile
               </NavDropdown.Item>
@@ -67,6 +65,7 @@ export function NavbarView({ visibilityFilter }) {
                 Terms and Conditions
               </NavDropdown.Item>
             </NavDropdown>
+
           </Nav>
           {isVis() && (
 

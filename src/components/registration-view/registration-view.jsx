@@ -73,67 +73,66 @@ export function RegistrationView(props) {
   return (
 
 
-    <Col id="cardBody">
-      <CardGroup>
-        <Card>
-          <Card.Body>
-            <Card.Title id="cardTitle">Please Register for a myFlix account</Card.Title>
-            <Form>
-              <Form.Group>
-                <Form.Label>Name:</Form.Label>
-                <Form.Control
-                  type="text"
-                  value={name}
-                  onChange={e => setName(e.target.value)}
-                  required
-                  placeholder="Enter your Name" />
-                {nameErr && <p>{nameErr}</p>}
-              </Form.Group>
+    <Col id="login-view" sm={10} md={12} lg={10} xl={8}>
+      <CardGroup id="cardGroup">
+        <Card.Body id="cardLogin">
+          <Card.Header id="cardTitle" as="h4">Please Register for a myFlix account</Card.Header>
+          <Form id="cardForm">
+            <Form.Group controlId="formUsername">
+              <Form.Label id="logLabel">Name:</Form.Label>
+              <Form.Control
+                type="text"
+                value={name}
+                onChange={e => setName(e.target.value)}
+                required
+                placeholder="Enter your Name" />
+              {nameErr && <p>{nameErr}</p>}
+            </Form.Group>
 
-              <Form.Group>
-                <Form.Label>Password:</Form.Label>
-                <Form.Control
-                  type="password"
-                  value={password}
-                  onChange={e => setPassword(e.target.value)}
-                  required
-                  placeholder="Enter a Password"
-                  minLength="8" />
-                {passwordErr && <p>{passwordErr}</p>}
-              </Form.Group>
-              <Form.Group>
-                <Form.Label>Email:</Form.Label>
-                <Form.Control
-                  type="email"
-                  value={email}
-                  onChange={e => setEmail(e.target.value)}
-                  required
-                  placeholder="Enter your email address" />
-                {emailErr && <p>{emailErr}</p>}
-              </Form.Group>
-              <Form.Group>
-                <Form.Label>Birthday:</Form.Label>
-                <Form.Control
-                  type="date"
-                  value={birthday}
-                  onChange={e => setBirthday(e.target.value)}
-                  required
-                  placeholder="Enter your birthdate YYYY-MM-DD" />
-              </Form.Group>
+            <Form.Group controlId="formUsername">
+              <Form.Label id="logLabel">Password:</Form.Label>
+              <Form.Control
+                type="password"
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+                required
+                placeholder="Enter a Password"
+                minLength="8" />
+              {passwordErr && <p>{passwordErr}</p>}
+            </Form.Group>
+            <Form.Group controlId="formEmail">
+              <Form.Label id="logLabel">Email:</Form.Label>
+              <Form.Control
+                type="email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                required
+                placeholder="Enter your email address" />
+              {emailErr && <p>{emailErr}</p>}
+            </Form.Group>
+            <Form.Group controlId="formBirthday">
+              <Form.Label id="logLabel">Birthday:</Form.Label>
+              <Form.Control
+                type="date"
+                value={birthday}
+                onChange={e => setBirthday(e.target.value)}
+                required
+                placeholder="Enter your birthdate YYYY-MM-DD" />
+            </Form.Group>
 
 
-              <Button variant="primary" className="LogRegButton"
-                type="submit"
-                onClick={handleSubmit}>
-                Register
+            <Button variant="primary" className="LogRegButton"
+              type="submit"
+              onClick={handleSubmit}>
+              Register
+            </Button>
+            <Link to={"/"}>
+              <Button variant="dark" className="LogRegPageButton">To Login Page
               </Button>
-              <Link to={"/"}>
-                <Button variant="dark" className="LogRegPageButton">To Login Page
-                </Button>
-              </Link>
-            </Form>
-          </Card.Body>
-        </Card>
+            </Link>
+          </Form>
+        </Card.Body>
+
       </CardGroup>
     </Col>
   );
