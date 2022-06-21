@@ -1,6 +1,6 @@
-# movie_api-client
+# myFlix-client
 
-## This is the Client-Sinde Part of my Movie Application
+## This is the Client-Side Part of my Movie Application
 
 ### Objective:
 
