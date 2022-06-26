@@ -125,17 +125,18 @@ export class MovieView extends React.Component {
                   Genre: <Link to={`/genres/${movie.Genre.Name}`}>
                     {movie.Genre.Name}
                   </Link>
-                </Card.Text></Col></Row>
-            <Row id="movie-row"><Col>
-              <Button variant="primary" onClick={() => { onBackClick(null); }}>Back to Movies</Button></Col>
-              <Col>{!isFav && (<Button variant="dark" id='FavButton' onClick={this.addFav}> Add to favorites </Button>
-              )}
-                {isFav && (<Button variant="dark" id='FavButton' onClick={this.removeFav}>
-                  Remove from favorites
-                </Button>
-                )}</Col>
+                </Card.Text><Row id="movie-row"><Col>
+                  <Button variant="primary" onClick={() => { onBackClick(null); }}>Back to Movies</Button></Col>
+                  <Col>{!isFav && (<Button variant="dark" id='FavButton' onClick={this.addFav}> Add to favorites </Button>
+                  )}
+                    {isFav && (<Button variant="dark" id='FavButton' onClick={this.removeFav}>
+                      Remove from favorites
+                    </Button>
+                    )}</Col>
 
+                </Row></Col>
             </Row>
+
           </Card.Body>
         </Card>
       </Row >

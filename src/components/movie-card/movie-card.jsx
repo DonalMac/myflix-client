@@ -15,14 +15,15 @@ export class MovieCard extends React.Component {
         <Card id="movie-card" >
           <Card.Body  >
             <Row id="card-body">
-              <Col md={6}><Link to={`/movies/${movie._id}`}>
+              <Col md={4} lg={5}><Link to={`/movies/${movie._id}`}>
                 <Card.Img variant="top" src={movie.ImagePath} crossOrigin="anonymous" id="movieView-image" />
               </Link></Col>
 
 
-              <Col md={6}>
+              <Col md={8} lg={7}>
                 <Card.Title id="card-title">{movie.Title}</Card.Title>
                 <Card.Text id="card-text">{movie.Description}</Card.Text>
+                <Card.Text id="fillerBox"></Card.Text>
               </Col>
             </Row>
           </Card.Body >
